@@ -1,38 +1,31 @@
-.App {
-  text-align: center;
+html {
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Styles for each section to ensure they are large enough to scroll */
+.resume section {
+  min-height: 100vh; /* Viewport Height - each section takes at least full window height */
+  /* Additional styling for your sections */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Styles for the navbar */
+nav {
+  position: fixed; /* Keeps the navbar at the top */
+  width: 100%;
+  align-items: right;
+  /* Additional styling for your navbar */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-end; /* Align items to the right */
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-item {
+  margin-left: 20px; /* Space between items */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Ensure content does not hide behind the fixed navbar */
+.resume body {
+  padding-top: 300px /* height of your navbar */;
 }

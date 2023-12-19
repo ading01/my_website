@@ -1,0 +1,82 @@
+.resume-card {
+  width: 50vw;
+  background-color: #735bf7;
+  margin: 20px;
+  border-radius: 10px;
+  border: 5px solid black;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.resume-card.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  padding: 10px;
+}
+
+.left {
+  flex: 25%;
+}
+
+.right {
+  flex: 75%;
+  background-color: aqua;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between; /* this will push the children to the edges */
+}
+
+.row1 {
+  /* display: flex; */
+  margin: 2px;
+}
+
+.row2 {
+  /* display: flex; */
+  margin: 4px;
+}
+
+.coursework-section,
+.activities-section {
+  margin-bottom: 20px;
+}
+
+.courses-container,
+.activities-container {
+  /* Using flex-wrap allows the course elements to wrap onto the next line */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.course {
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block; /* This makes the element's width relative to its content */
+  margin-right: 10px; /* Spacing between elements */
+  margin-bottom: 10px; /* Spacing between lines */
+}
+
+/* .activities-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+} */
+
+.activity {
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: block; /* A block element will take the full width available */
+}

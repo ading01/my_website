@@ -1,0 +1,17 @@
+import { DefaultTheme } from "styled-components";
+
+const theme: DefaultTheme = {
+  fonts: {
+    body: "Georgia, serif",
+    heading: "Georgia, serif",
+    monospace: "'Courier New', monospace",
+  },
+  texts: {
+    primary: "#000000",
+    secondary: "#6b6b6b",
+    paragraph: "#000000",
+  },
+  // You can add other theme properties like colors, fontSizes, etc.
+};
+
+export default theme;

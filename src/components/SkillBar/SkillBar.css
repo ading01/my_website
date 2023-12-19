@@ -1,0 +1,25 @@
+/* SkillBar.css */
+
+.skill-container {
+  margin-bottom: 10px;
+}
+
+.skill-name {
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.skill-bar {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skill-percentage {
+  background-color: #4caf50;
+  height: 20px;
+  border-radius: 5px;
+  width: 0;
+  transition: width 2s ease-out;
+}

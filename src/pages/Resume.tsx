@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import "./Resume.css";
+import ResumeCard from "../components/ResumeCard/ResumeCard";
+import EducationContent from "../content/EducationContent/EducationContent";
+import SkillsContent from "../content/SkillsContent";
 
 interface Word {
   id: number;
@@ -57,13 +60,12 @@ function Resume() {
     }, 0);
 
     setTimeout(() => {
-      const wordElement = document.getElementById(
-        `word-${wordId}`
-      ) as HTMLElement | null;
+      const wordElement = document.getElementById(`word-${wordId}`);
       if (wordElement) {
         wordElement.classList.add("fade-out");
       }
-    }, 5000); // 10000 milliseconds = 10 seconds
+      removeWordAfterFadeOut(wordId);
+    }, 10000); // 10 seconds
 
     const removeWordAfterFadeOut = (wordId: number) => {
       setTimeout(() => {
@@ -75,8 +77,7 @@ function Resume() {
   return (
     <div id="resume" className="resume">
       <div id="home" className="section1" onClick={handleClick}>
-        Home
-        {words.map((word) => (
+        {/* {words.map((word) => (
           <div
             key={word.id}
             id={`word-${word.id}`}
@@ -85,13 +86,16 @@ function Resume() {
           >
             Hello
           </div>
-        ))}
+        ))} */}
       </div>
       <div id="education" className="section1">
-        Education
+        <ResumeCard
+          section_name="Education"
+          resume_content={<EducationContent />}
+        />
       </div>
       <div id="skills" className="section1">
-        Skills
+        <ResumeCard section_name="Skills" resume_content={<SkillsContent />} />
       </div>
     </div>
   );

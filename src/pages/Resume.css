@@ -19,30 +19,3 @@
   justify-content: center;
   align-items: center;
 }
-
-@keyframes dropAnimation {
-  from {
-    top: 0;
-  }
-  to {
-    top: 90%;
-  }
-}
-
-.word {
-  position: absolute;
-  /* Additional styling for the word */
-}
-
-.fade-out {
-  animation: fadeOut 2s forwards;
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}

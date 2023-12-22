@@ -3,6 +3,8 @@ import "./Resume.css";
 import ResumeCard from "../components/ResumeCard/ResumeCard";
 import EducationContent from "../content/EducationContent/EducationContent";
 import SkillsContent from "../content/SkillsContent";
+import ExperienceContent from "../content/ExperienceContent";
+import Ticker from "../components/Ticker/Ticker";
 
 interface Word {
   id: number;
@@ -76,6 +78,7 @@ function Resume() {
 
   return (
     <div id="resume" className="resume">
+      <Ticker repeatText="Hello, my name is Allan.    " />
       <div id="home" className="section1" onClick={handleClick}>
         {/* {words.map((word) => (
           <div
@@ -87,6 +90,12 @@ function Resume() {
             Hello
           </div>
         ))} */}
+      </div>
+      <div id="experience" className="section1">
+        <ResumeCard
+          section_name="Experience"
+          resume_content={<ExperienceContent />}
+        />
       </div>
       <div id="education" className="section1">
         <ResumeCard

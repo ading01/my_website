@@ -1,0 +1,21 @@
+/* CircularProgress.css */
+
+.circular-progress {
+  transform: rotate(
+    -90deg
+  ); /* Rotate the SVG to start the progress from the top */
+}
+
+.circular-progress__background,
+.circular-progress__value {
+  fill: none; /* Make the inside of the circle transparent */
+  transition: stroke-dashoffset 1s ease-out; /* Smooth transition for the dash offset */
+}
+
+.circular-progress__background {
+  stroke: #ddd; /* Background color of the circle */
+}
+
+.circular-progress__value {
+  stroke: #4caf50; /* Color of the progress */
+}

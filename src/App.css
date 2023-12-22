@@ -9,12 +9,12 @@ html {
 }
 
 /* Styles for the navbar */
-nav {
-  position: fixed; /* Keeps the navbar at the top */
+
+/* nav {
+  position: fixed; 
   width: 100%;
   align-items: right;
-  /* Additional styling for your navbar */
-}
+} */
 
 .navbar {
   display: flex;
@@ -28,4 +28,56 @@ nav {
 /* Ensure content does not hide behind the fixed navbar */
 .resume body {
   padding-top: 300px /* height of your navbar */;
+}
+
+.full-width {
+  width: 100%; /* Sets the width of the div to the full width of the viewport */
+  background-color: black; /* Example background color */
+  color: white; /* Text color */
+  text-align: left; /* Centers the text inside the div */
+  /* padding: 20px 0; Adds padding above and below the text */
+  font: 5rem "Roboto", sans-serif; /* Sets the font size and family */
+  text-indent: 50px;
+}
+
+.full-width ul {
+  list-style: none;
+  background-color: black;
+  padding: 0;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.full-width li {
+  display: block; /* Makes each li a block-level element, which stacks them vertically */
+}
+
+.full-width a {
+  text-decoration: none;
+  color: white;
+  padding: 15px 20px;
+  display: block; /* Ensures the anchors also behave as block-level, filling the full width of the li */
+}
+
+.menu-item {
+  width: 100%;
+  display: inline-block;
+  /* padding: 1em 2em; */
+  text-align: left;
+  color: white;
+  background: black; /* default color */
+
+  /* "to left" / "to right" - affects initial color */
+  background: linear-gradient(to left, black 50%, magenta 50%) right;
+  background-size: 200%;
+  transition: 0.2s ease-out;
+}
+
+.menu-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  background-position: left;
 }

@@ -5,6 +5,8 @@ import EducationContent from "../content/EducationContent/EducationContent";
 import SkillsContent from "../content/SkillsContent";
 import ExperienceContent from "../content/ExperienceContent";
 import Ticker from "../components/Ticker/Ticker";
+import FadeInSection from "../ui/FadeInSection";
+import CircularImage from "../components/CircularImage";
 
 interface Word {
   id: number;
@@ -79,18 +81,33 @@ function Resume() {
   return (
     <div id="resume" className="resume">
       <Ticker repeatText="Hello, my name is Allan.    " />
-      <div id="home" className="section1" onClick={handleClick}>
-        {/* {words.map((word) => (
-          <div
-            key={word.id}
-            id={`word-${word.id}`}
-            className="word"
-            style={{ left: word.left, top: word.top }}
-          >
-            Hello
-          </div>
-        ))} */}
+      <div id="home" className="section1">
+        <CircularImage
+          src="../profile_picture.jpeg"
+          alt="Sample Image"
+          borderColor="green"
+          borderWidth={10}
+        ></CircularImage>
       </div>
+      <FadeInSection>
+        <div id="menu" className="section1">
+          <div className="full-width">
+            <nav>
+              <ul>
+                <li className="menu-item">
+                  <a href="#experience">Experience</a>
+                </li>
+                <li className="menu-item">
+                  <a href="#education">Education</a>
+                </li>
+                <li className="menu-item">
+                  <a href="#skills">Skills</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </FadeInSection>
       <div id="experience" className="section1">
         <ResumeCard
           section_name="Experience"

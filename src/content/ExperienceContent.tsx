@@ -1,4 +1,5 @@
 import { Heading, SubHeading, PText, PTitle } from "../styles/text";
+import FadeInSection from "../ui/FadeInSection";
 
 let ResumeContent = [
   {
@@ -27,9 +28,10 @@ let ResumeContent = [
 
 function ExperienceContent() {
   return (
-    <div className="content-block">
+    <div className="experience-content">
       {ResumeContent.map((job, index) => (
-        <div key={index}>
+        <FadeInSection key={index}>
+          {/* <div key={index}> */}
           <div className="container row1">
             <Heading>{job.company_name}</Heading>
             <Heading>{job.location}</Heading>
@@ -43,7 +45,8 @@ function ExperienceContent() {
               <PText>{detail}</PText>
             </div>
           ))}
-        </div>
+          {/* </div> */}
+        </FadeInSection>
       ))}
     </div>
   );

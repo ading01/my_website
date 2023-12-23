@@ -6,6 +6,8 @@ export const Heading = styled.h1<{ mode: "light" | "dark" }>`
   color: ${({ theme }) => theme.texts.primary};
   margin: 0;
   padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
 `;
 
 export const SubHeading = styled.h2<{ mode: "light" | "dark" }>`

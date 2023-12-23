@@ -32,7 +32,6 @@ html {
 
 .full-width {
   width: 100%; /* Sets the width of the div to the full width of the viewport */
-  background-color: black; /* Example background color */
   color: white; /* Text color */
   text-align: left; /* Centers the text inside the div */
   /* padding: 20px 0; Adds padding above and below the text */

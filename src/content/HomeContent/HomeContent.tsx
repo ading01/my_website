@@ -15,7 +15,6 @@ import styled from "styled-components";
 
 function HomeContent() {
   const { theme } = useTheme();
-  console.log("theme", theme);
   return (
     <div className="home-container">
       <div className="left-column">

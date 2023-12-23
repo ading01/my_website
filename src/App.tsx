@@ -1,6 +1,7 @@
 import React from "react";
 // import { ThemeProvider } from "styled-components";
 // import theme from "./theme";
+import GlobalStyle from "./styles/GlobalStyle";
 import { ThemeProvider } from "./contexts/ThemeContext";
 
 // import logo from "./logo.svg";
@@ -17,16 +18,15 @@ import "./App.css";
 import Navbar from "./components/Navbar"; // Adjust the import path based on your file structure
 
 const App: React.FC = () => {
+  console.log("here");
   return (
     <div className="App">
       <ThemeProvider>
+        <GlobalStyle />
         <Router>
           <Navbar />
           <Routes>
             <Route path="/" element={<Resume></Resume>} />
-            <Route path="/about" element={<h1>About</h1>} />
-            <Route path="/services" element={<h1>Services</h1>} />
-            <Route path="/contact" element={<h1>Contact</h1>} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Router>

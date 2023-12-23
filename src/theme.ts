@@ -1,6 +1,7 @@
 import { DefaultTheme } from "styled-components";
 
 const lightTheme: DefaultTheme = {
+  backgroundColor: "beige",
   fonts: {
     body: "Cambria, serif",
     heading: "Cambria, serif",
@@ -15,6 +16,7 @@ const lightTheme: DefaultTheme = {
 };
 
 const darkTheme: DefaultTheme = {
+  backgroundColor: "black",
   fonts: {
     body: "Cambria, serif",
     heading: "Cambria, serif",

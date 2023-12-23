@@ -7,6 +7,7 @@ import ExperienceContent from "../content/ExperienceContent";
 import Ticker from "../components/Ticker/Ticker";
 import FadeInSection from "../ui/FadeInSection";
 import HomeContent from "../content/HomeContent/HomeContent";
+import ThemeToggleButton from "../components/ThemeToggleButton/ThemeToggleButton";
 
 interface Word {
   id: number;
@@ -80,6 +81,7 @@ function Resume() {
 
   return (
     <div id="resume" className="resume">
+      <ThemeToggleButton />
       <Ticker repeatText="Hello, my name is Allan.    " />
       <div id="home" className="section1">
         <HomeContent />

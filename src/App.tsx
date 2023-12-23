@@ -1,7 +1,7 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
-import theme from "./theme";
-// import { ThemeProvider } from "./contexts/ThemeContext";
+// import { ThemeProvider } from "styled-components";
+// import theme from "./theme";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 // import logo from "./logo.svg";
 import {
@@ -19,7 +19,7 @@ import Navbar from "./components/Navbar"; // Adjust the import path based on you
 const App: React.FC = () => {
   return (
     <div className="App">
-      <ThemeProvider theme={theme}>
+      <ThemeProvider>
         <Router>
           <Navbar />
           <Routes>

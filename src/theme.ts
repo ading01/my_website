@@ -1,6 +1,6 @@
 import { DefaultTheme } from "styled-components";
 
-const theme: DefaultTheme = {
+const lightTheme: DefaultTheme = {
   fonts: {
     body: "Cambria, serif",
     heading: "Cambria, serif",
@@ -14,4 +14,18 @@ const theme: DefaultTheme = {
   // You can add other theme properties like colors, fontSizes, etc.
 };
 
-export default theme;
+const darkTheme: DefaultTheme = {
+  fonts: {
+    body: "Cambria, serif",
+    heading: "Cambria, serif",
+    monospace: "'Courier New', monospace",
+  },
+  texts: {
+    primary: "white",
+    secondary: "white",
+    paragraph: "#ffffff",
+  },
+  // You can add other theme properties like colors, fontSizes, etc.
+};
+
+export { lightTheme, darkTheme };

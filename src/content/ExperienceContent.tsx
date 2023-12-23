@@ -1,3 +1,4 @@
+import { useTheme } from "../contexts/ThemeContext";
 import { Heading, SubHeading, PText, PTitle } from "../styles/text";
 import FadeInSection from "../ui/FadeInSection";
 
@@ -27,22 +28,24 @@ let ResumeContent = [
 ];
 
 function ExperienceContent() {
+  const { theme } = useTheme();
+
   return (
     <div className="experience-content">
       {ResumeContent.map((job, index) => (
         <FadeInSection key={index}>
           {/* <div key={index}> */}
           <div className="container row1">
-            <Heading>{job.company_name}</Heading>
-            <Heading>{job.location}</Heading>
+            <Heading mode={theme}>{job.company_name}</Heading>
+            <Heading mode={theme}>{job.location}</Heading>
           </div>
           <div className="container row2">
-            <SubHeading>{job.position}</SubHeading>
-            <SubHeading>{job.date}</SubHeading>
+            <SubHeading mode={theme}>{job.position}</SubHeading>
+            <SubHeading mode={theme}>{job.date}</SubHeading>
           </div>
           {job.details.map((detail, index) => (
             <div className="resume-block" key={index}>
-              <PText>{detail}</PText>
+              <PText mode={theme}>{detail}</PText>
             </div>
           ))}
           {/* </div> */}

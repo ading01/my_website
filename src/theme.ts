@@ -2,8 +2,8 @@ import { DefaultTheme } from "styled-components";
 
 const theme: DefaultTheme = {
   fonts: {
-    body: "Georgia, serif",
-    heading: "Georgia, serif",
+    body: "Cambria, serif",
+    heading: "Cambria, serif",
     monospace: "'Courier New', monospace",
   },
   texts: {

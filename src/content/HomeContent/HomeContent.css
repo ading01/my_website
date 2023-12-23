@@ -1,0 +1,21 @@
+.home-container {
+  display: flex;
+  flex-direction: row;
+  /* background-color: aqua; */
+  width: 60vw;
+}
+
+.left-column {
+  flex: 75%;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-column {
+  flex: 25%;
+  background-color: blue;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

@@ -6,7 +6,7 @@ import SkillsContent from "../content/SkillsContent";
 import ExperienceContent from "../content/ExperienceContent";
 import Ticker from "../components/Ticker/Ticker";
 import FadeInSection from "../ui/FadeInSection";
-import CircularImage from "../components/CircularImage";
+import HomeContent from "../content/HomeContent/HomeContent";
 
 interface Word {
   id: number;
@@ -82,12 +82,7 @@ function Resume() {
     <div id="resume" className="resume">
       <Ticker repeatText="Hello, my name is Allan.    " />
       <div id="home" className="section1">
-        <CircularImage
-          src="../profile_picture.jpeg"
-          alt="Sample Image"
-          borderColor="green"
-          borderWidth={10}
-        ></CircularImage>
+        <HomeContent />
       </div>
       <FadeInSection>
         <div id="menu" className="section1">

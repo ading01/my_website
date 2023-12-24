@@ -16,19 +16,15 @@ import styled from "styled-components";
 // `;
 
 const IconContainer = styled.div`
-  border-radius: 50%; // Makes the div circular
-  display: flex;
+  border-radius: 50%;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; // Ensures nothing spills out of the circular shape
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: none;
 
-  & svg {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  &:hover svg {
-    transform: translateY(-5px);
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  &:hover {
+    transform: translateY(-5px); // Moves the container up
   }
 `;
 

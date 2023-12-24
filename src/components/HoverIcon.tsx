@@ -20,7 +20,6 @@ const StyledIconWrapper = styled.div<{ hoverColor: string }>`
   &:hover svg {
     fill: ${({ hoverColor }) => hoverColor}; // Change fill color on hover
     transform: translateY(-5px); // Move icon upwards on hover
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); // Shadow below icon on hover
   }
 `;
 

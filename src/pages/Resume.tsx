@@ -8,6 +8,9 @@ import Ticker from "../components/Ticker/Ticker";
 import FadeInSection from "../ui/FadeInSection";
 import HomeContent from "../content/HomeContent/HomeContent";
 import ThemeToggleButton from "../components/ThemeToggleButton/ThemeToggleButton";
+import styled from "styled-components";
+import { useTheme } from "../contexts/ThemeContext";
+import { MenuItem } from "../styles/text";
 
 interface Word {
   id: number;
@@ -15,8 +18,37 @@ interface Word {
   top: string;
 }
 
+// export const MenuItem = styled.li<{ mode: "light" | "dark" }>`
+//   width: 100%;
+//   display: inline-block;
+//   text-align: left;
+//   color: ${({ theme }) => theme.texts.primary};
+//   background: ${({ theme }) => theme.background};
+//   background-size: 200%;
+//   transition: 0.2s ease-out;
+
+//   margin: 0;
+//   padding: 0;
+//   transition: background-color 0.3s ease, color 0.3s ease,
+//     border-color 0.3s ease;
+// `;
+
+// const MenuItem = styled.li`
+//   color: ${({ theme }) => theme.texts.primary};
+
+//   &:hover {
+//     background-position: ${({ theme }) => theme.menuItemHoverBackground};
+//   }
+
+//   a {
+//     color: ${({ theme }) => theme.menuItemTextColor};
+//     text-decoration: none;
+//   }
+// `;
+
 function Resume() {
   const [words, setWords] = useState<Word[]>([]);
+  const { theme } = useTheme();
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -91,15 +123,17 @@ function Resume() {
           <div className="full-width">
             <nav>
               <ul>
-                <li className="menu-item">
+                <MenuItem mode={theme}>
                   <a href="#experience">Experience</a>
-                </li>
-                <li className="menu-item">
+                </MenuItem>
+
+                <MenuItem mode={theme}>
                   <a href="#education">Education</a>
-                </li>
-                <li className="menu-item">
+                </MenuItem>
+
+                <MenuItem mode={theme}>
                   <a href="#skills">Skills</a>
-                </li>
+                </MenuItem>
               </ul>
             </nav>
           </div>

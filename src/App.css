@@ -10,7 +10,7 @@ html {
 
 /* Styles for the navbar */
 
-/* nav {
+/*  {
   position: fixed; 
   width: 100%;
   align-items: right;
@@ -41,7 +41,6 @@ html {
 
 .full-width ul {
   list-style: none;
-  background-color: black;
   padding: 0;
   margin-left: 10%;
   margin-right: 10%;

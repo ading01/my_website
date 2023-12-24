@@ -1,5 +1,7 @@
 import "./HomeContent.css";
 import { useTheme } from "../../contexts/ThemeContext";
+import { FaGithub } from "react-icons/fa";
+import HoverIcon from "../../components/HoverIcon";
 
 import CircularImage from "../../components/CircularImage";
 import { Heading, SubHeading, PText, PTitle } from "../../styles/text";
@@ -13,13 +15,44 @@ import styled from "styled-components";
 //   padding: 0;
 // `;
 
+const IconContainer = styled.div`
+  border-radius: 50%; // Makes the div circular
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; // Ensures nothing spills out of the circular shape
+
+  & svg {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  &:hover svg {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  }
+`;
+
+const TitleHeading = styled(Heading)`
+  font-size: 3rem;
+`;
+
 function HomeContent() {
   const { theme } = useTheme();
   return (
     <div className="home-container">
       <div className="left-column">
-        <Heading mode={theme}>Hi, my name is Allan</Heading>
-        Hey! My name is Allan. Welcome to my website.
+        <TitleHeading mode={theme}>Hi! My name is Allan.</TitleHeading>
+        <TitleHeading mode={theme}>Welcome to my website</TitleHeading>
+        {/* <FaGithub style={{ color: "red" }} /> */}
+        {/* <HoverIcon icon={<FaGithub />} hoverColor="#ff6347" /> */}
+        <HoverIcon
+          icon={
+            <IconContainer>
+              <FaGithub />
+            </IconContainer>
+          }
+          hoverColor="#ff6347"
+        />
       </div>
       <div className="right-column">
         <CircularImage

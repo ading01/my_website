@@ -12,6 +12,7 @@ const lightTheme: DefaultTheme = {
     secondary: "#6b6b6b",
     paragraph: "#000000",
   },
+  hover_color: "#007bff",
   // You can add other theme properties like colors, fontSizes, etc.
 };
 
@@ -27,6 +28,7 @@ const darkTheme: DefaultTheme = {
     secondary: "white",
     paragraph: "#ffffff",
   },
+  hover_color: "magenta",
   // You can add other theme properties like colors, fontSizes, etc.
 };
 

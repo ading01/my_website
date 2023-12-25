@@ -68,7 +68,6 @@ html {
   /* "to left" / "to right" - affects initial color */
   background: linear-gradient(to left, black 50%, magenta 50%) right;
   background-size: 200%;
-  transition: 0.2s ease-out;
 }
 
 .menu-item a {

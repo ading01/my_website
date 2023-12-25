@@ -114,7 +114,7 @@ function Resume() {
   return (
     <div id="resume" className="resume">
       <ThemeToggleButton />
-      <Ticker repeatText="Hello, my name is Allan.    " />
+      <Ticker repeatText="Hello, my name is Allan." />
       <div id="home" className="section1">
         <HomeContent />
       </div>

@@ -1,5 +1,47 @@
 import React from "react";
-import "./Ticker.css"; // Assuming your CSS is in a separate file
+import styled, { keyframes } from "styled-components";
+
+const scrollAnimation = keyframes`
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+`;
+
+const TickerContainer = styled.div`
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%; // Adjust as needed
+  background-color: ${({ theme }) => theme.backgroundColor};
+  transition: background-color 0.5s ease;
+`;
+
+// Create a styled text component with the animation
+const TickerText = styled.div`
+  display: inline-block;
+  font-size: 20vh;
+  font-family: ${({ theme }) => theme.fonts.heading};
+  color: ${({ theme }) => theme.texts.primary};
+  transition: color 0.5s ease;
+  animation: ${scrollAnimation} 30s linear infinite;
+`;
+
+// const TickerContainer = styled.div`
+//   overflow: hidden;
+//   white-space: nowrap;
+
+//   width: 100%;
+//   background-color: ${({ theme }) => theme.backgroundColor};
+//   font-family: ${({ theme }) => theme.fonts.heading};
+//   color: ${({ theme }) => theme.texts.primary};
+//   display: inline-block;
+//   font-size: 20vh;
+//   transition: background-color 0.6s ease, color 0.6s ease,
+
+//   animation: ${scrollAnimation} 30s linear infinite;
+// `;
 
 type TickerProps = {
   repeatText: string;
@@ -7,12 +49,12 @@ type TickerProps = {
 
 const Ticker: React.FC<TickerProps> = ({ repeatText }) => {
   // Create a long string by repeating the text
-  const repeatedText = Array(50).fill(repeatText).join("");
+  // const repeatedText = Array(50).fill(repeatText).join("");
 
   return (
-    <div className="ticker-container">
-      <div className="ticker-text">{repeatedText}</div>
-    </div>
+    <TickerContainer>
+      <TickerText>{repeatText}</TickerText>
+    </TickerContainer>
   );
 };
 

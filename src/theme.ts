@@ -13,6 +13,15 @@ const lightTheme: DefaultTheme = {
     paragraph: "#000000",
   },
   hover_color: "#007bff",
+  iconSize: "2rem",
+  toggleButton: {
+    background: "#F8F8F8",
+    text: "#333",
+    border: "#4D4D4D",
+    hoverBackground: "#E0E0E0",
+    activeShadow: "#BDBDBD",
+  },
+
   // You can add other theme properties like colors, fontSizes, etc.
 };
 
@@ -29,6 +38,14 @@ const darkTheme: DefaultTheme = {
     paragraph: "#ffffff",
   },
   hover_color: "magenta",
+  iconSize: "2rem",
+  toggleButton: {
+    background: "#333",
+    text: "#F8F8F8",
+    border: "#AAA",
+    hoverBackground: "#555",
+    activeShadow: "#999",
+  },
   // You can add other theme properties like colors, fontSizes, etc.
 };
 

@@ -14,8 +14,11 @@ const StyledIconWrapper = styled.span<{
   // Changed to span for default inline behavior.
   & svg {
     fill: ${({ theme }) => theme.texts.primary || "white"}; // Initial color
+    width: ${({ theme }) => theme.iconSize}; // Set width from theme
+    height: ${({ theme }) => theme.iconSize}; // Set height from theme
     transition: fill 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; // Transitions
     box-shadow: none; // No shadow initially
+    margin-right: 10px; // Add spacing between icon and text
   }
 
   &:hover svg {

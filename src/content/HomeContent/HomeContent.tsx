@@ -15,19 +15,6 @@ import styled from "styled-components";
 //   padding: 0;
 // `;
 
-const IconContainer = styled.div`
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: none;
-
-  &:hover {
-    transform: translateY(-5px); // Moves the container up
-  }
-`;
-
 const TitleHeading = styled(Heading)`
   font-size: 3rem;
 `;
@@ -40,15 +27,7 @@ function HomeContent() {
         <TitleHeading mode={theme}>Hi! My name is Allan.</TitleHeading>
         <TitleHeading mode={theme}>Welcome to my website</TitleHeading>
         {/* <FaGithub style={{ color: "red" }} /> */}
-        {/* <HoverIcon icon={<FaGithub />} hoverColor="#ff6347" /> */}
-        <HoverIcon
-          icon={
-            <IconContainer>
-              <FaGithub />
-            </IconContainer>
-          }
-          hoverColor="#ff6347"
-        />
+        <HoverIcon as="span" icon={<FaGithub />} hoverColor="#ff6347" />
       </div>
       <div className="right-column">
         <CircularImage

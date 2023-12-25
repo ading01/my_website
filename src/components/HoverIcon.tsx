@@ -1,18 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import { useTheme } from "../contexts/ThemeContext";
 
 interface HoverIconProps {
   icon: React.ReactElement;
   hoverColor: string;
+  as?: keyof JSX.IntrinsicElements; // This allows specifying which HTML tag to use.
 }
 
-const StyledIconWrapper = styled.div<{ hoverColor: string }>`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
+const StyledIconWrapper = styled.span<{
+  hoverColor: string;
+}>`
+  // Changed to span for default inline behavior.
   & svg {
-    fill: currentColor; // Initial color
+    fill: ${({ theme }) => theme.texts.primary || "white"}; // Initial color
     transition: fill 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; // Transitions
     box-shadow: none; // No shadow initially
   }
@@ -23,19 +24,14 @@ const StyledIconWrapper = styled.div<{ hoverColor: string }>`
   }
 `;
 
-// &:hover {
-//     //     svg {
-//     //       fill: ${({ hoverColor }) => hoverColor};
-//     //     }
-//     //   }
-
-// const StyledIconWrapper = styled.div<{ hoverColor: string }>`
-//   // Styles for the wrapper
-
-// `;
-
-function HoverIcon({ icon, hoverColor }: HoverIconProps) {
-  return <StyledIconWrapper hoverColor={hoverColor}>{icon}</StyledIconWrapper>;
+function HoverIcon({ icon, hoverColor, as = "span" }: HoverIconProps) {
+  //   console.log("theme", theme);
+  // Apply the `as` prop to StyledIconWrapper to change the HTML tag dynamically.
+  return (
+    <StyledIconWrapper as={as} hoverColor={hoverColor}>
+      {icon}
+    </StyledIconWrapper>
+  );
 }
 
 export default HoverIcon;

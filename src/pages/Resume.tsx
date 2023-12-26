@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Resume.css";
 import ResumeCard from "../components/ResumeCard/ResumeCard";
 import EducationContent from "../content/EducationContent/EducationContent";
 import SkillsContent from "../content/SkillsContent";
@@ -163,7 +162,8 @@ function Resume() {
 
   return (
     <div id="resume" className="resume">
-      <WelcomeText>Welcome</WelcomeText>
+      <Ticker repeatText="Welcome" />
+      {/* <WelcomeText>Welcome</WelcomeText> */}
       <SectionContainer id="home">
         <HomeContentWrapper>
           <FadeInSection>

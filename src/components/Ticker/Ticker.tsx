@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 
 const scrollAnimation = keyframes`
   0% {
-    transform: translateX(100%);
+    transform: translateX(350%);
   }
   100% {
     transform: translateX(-100%);
@@ -11,21 +11,25 @@ const scrollAnimation = keyframes`
 `;
 
 const TickerContainer = styled.div`
-  overflow: hidden;
+  position: absolute;
   white-space: nowrap;
-  width: 100%; // Adjust as needed
+  width: 99%; // Adjust as needed
   background-color: ${({ theme }) => theme.backgroundColor};
   transition: background-color 0.5s ease;
+  overflow: hidden;
+  top: 300px;
 `;
 
 // Create a styled text component with the animation
 const TickerText = styled.div`
   display: inline-block;
-  font-size: 25vh;
+  font-size: 60vh;
   font-family: ${({ theme }) => theme.fonts.heading};
-  color: ${({ theme }) => theme.texts.primary};
+  color: ${({ theme }) => theme.texts.secondary};
   transition: color 0.5s ease;
   animation: ${scrollAnimation} 30s linear infinite;
+  z-index: 1;
+  overflow: auto;
 `;
 
 type TickerProps = {

@@ -35,16 +35,49 @@ const SkillsContainer: React.FC<SkillsContainerProps> = ({
 
 function SkillsContent() {
   return (
-    <SkillsContainer title="Skills">
-      <CircularLoadingBar progress={75} skill={"Typescript"} />
-      <CircularLoadingBar progress={75} skill={"React"} />
-      <CircularLoadingBar progress={75} skill={"React"} />
-      <CircularLoadingBar progress={75} skill={"React"} />
-      <CircularLoadingBar progress={75} skill={"React"} />
-      <CircularLoadingBar progress={75} skill={"React"} />
-      <CircularLoadingBar progress={75} skill={"React"} />
-      <CircularLoadingBar progress={75} skill={"React"} />
-    </SkillsContainer>
+    <div>
+      <SkillsContainer title="Languages">
+        <CircularLoadingBar progress={90} skill={"Python"} color={"#4f88ef"} />
+        <CircularLoadingBar
+          progress={85}
+          skill={"JavaScript"}
+          color={"#4f88ef"}
+        />
+        <CircularLoadingBar progress={75} skill={"C/C++"} color={"#4f88ef"} />
+        <CircularLoadingBar
+          progress={70}
+          skill={"TypeScript"}
+          color={"#4f88ef"}
+        />
+        <CircularLoadingBar
+          progress={85}
+          skill={"HTML/CSS"}
+          color={"#4f88ef"}
+        />
+        <CircularLoadingBar progress={75} skill={"Java"} color={"#4f88ef"} />
+        <CircularLoadingBar progress={75} skill={"R"} color={"#4f88ef"} />
+        <CircularLoadingBar progress={75} skill={"SQL"} color={"#4f88ef"} />
+      </SkillsContainer>
+      <SkillsContainer title="Frameworks">
+        <CircularLoadingBar progress={90} skill={"ReactJS"} color={"#FFA500"} />
+        <CircularLoadingBar progress={90} skill={"Node.js"} color={"#FFA500"} />
+        <CircularLoadingBar
+          progress={90}
+          skill={"Express.js"}
+          color={"#FFA500"}
+        />
+      </SkillsContainer>
+      <SkillsContainer title="Technologies">
+        <CircularLoadingBar progress={90} skill={"MongoDB"} color={"#00FF00"} />
+        <CircularLoadingBar progress={95} skill={"Git"} color={"#00FF00"} />
+        <CircularLoadingBar
+          progress={95}
+          skill={"REST API"}
+          color={"#00FF00"}
+        />
+        <CircularLoadingBar progress={50} skill={"Docker"} color={"#00FF00"} />
+      </SkillsContainer>
+    </div>
   );
 }
 

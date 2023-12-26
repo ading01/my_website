@@ -31,7 +31,7 @@ const CircularProgress = styled.circle.attrs<CircularProgressProps>(
   })
 )<CircularProgressProps>`
   fill: none;
-  stroke: #4f88ef;
+  stroke: ${(props) => props.color || "#4f88ef"}; // Default color is #4f88ef
   stroke-width: 4;
   stroke-linecap: round;
   transform: rotate(-90deg);
@@ -53,17 +53,17 @@ const CenterText = styled.text<{ labelColor?: string }>`
   font-size: 14px;
   text-anchor: middle;
   dominant-baseline: central;
-  font-family: Arial, sans-serif;
 `;
 
 // TypeScript React component that takes in the progress and skill as props
-const CircularLoadingBar: React.FC<{ progress: number; skill: string }> = ({
-  progress,
-  skill,
-}) => {
+const CircularLoadingBar: React.FC<{
+  progress: number;
+  skill: string;
+  color: string;
+}> = ({ progress, skill, color }) => {
   return (
     <LoadingContainer viewBox="0 0 100 100">
-      <CircularProgress progress={progress} />
+      <CircularProgress progress={progress} color={color} />
       {/* Use skill prop to dynamically display the skill text */}
       <CenterText x="50" y="50" labelColor="#000">
         {skill}

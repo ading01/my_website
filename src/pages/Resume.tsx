@@ -113,10 +113,11 @@ function Resume() {
 
   return (
     <div id="resume" className="resume">
-      <ThemeToggleButton />
       <Ticker repeatText="Hello, my name is Allan." />
       <div id="home" className="section1">
-        <HomeContent />
+        <FadeInSection>
+          <HomeContent />
+        </FadeInSection>
       </div>
       <FadeInSection>
         <div id="menu" className="section1">

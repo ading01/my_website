@@ -1,4 +1,5 @@
 import React from "react";
+import ThemeToggleButton from "../components/ThemeToggleButton/ThemeToggleButton";
 
 const Navbar = () => {
   return (
@@ -14,6 +15,7 @@ const Navbar = () => {
       <a className="navbar-item" href="#skills">
         Skills
       </a>
+      <ThemeToggleButton />
     </nav>
   );
 };

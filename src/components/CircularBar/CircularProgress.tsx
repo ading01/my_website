@@ -1,58 +1,59 @@
-// CircularProgress.tsx
+import * as React from "react";
+import styled, { keyframes } from "styled-components";
 
-import React, { useEffect, useState } from "react";
-import "./CircularProgress.css";
+// Calculate the circumference of the circle
+const radius = 45;
+const circumference = 2 * Math.PI * radius;
 
+// Keyframes for the animation
+const animateProgress = (props: CircularProgressProps) => keyframes`
+  from {
+    stroke-dasharray: 0, ${circumference};
+  }
+  to {
+    stroke-dasharray: ${
+      (props.progress / 100) * circumference
+    }, ${circumference};
+  }
+`;
+
+// Props for the CircularProgress component
 interface CircularProgressProps {
-  size: number; // Size of the circular progress bar in pixels
-  strokeWidth: number; // Width of the stroke
-  percentage: number; // Percentage of the circle to be filled
+  progress: number;
 }
 
-const CircularProgress: React.FC<CircularProgressProps> = ({
-  size,
-  strokeWidth,
-  percentage,
-}) => {
-  // Calculate the center of the circle
-  const center = size / 2;
-  // Calculate the radius of the circle
-  const radius = size / 2 - strokeWidth / 2;
-  // Calculate the circumference of the circle
-  const circumference = 2 * Math.PI * radius;
-  // Calculate the stroke dash offset
-  const [offset, setOffset] = useState(circumference);
+// Styled circular progress bar
+const CircularProgress = styled.circle.attrs<CircularProgressProps>(
+  (props) => ({
+    r: radius,
+    cx: 50,
+    cy: 50,
+  })
+)<CircularProgressProps>`
+  fill: none;
+  stroke: #4f88ef;
+  stroke-width: 4;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  stroke-dasharray: 0 ${circumference};
+  stroke-dashoffset: 0;
+  animation: ${(props) => animateProgress(props)} 2s ease-out forwards;
+`;
 
-  useEffect(() => {
-    // Calculate the offset for the stroke dash
-    const progressOffset = ((100 - percentage) / 100) * circumference;
-    setOffset(progressOffset);
-  }, [setOffset, circumference, percentage, offset]);
+// Styled SVG container
+const LoadingContainer = styled.svg`
+  width: 100px;
+  height: 100px;
+`;
 
+// TypeScript React component that takes in the progress as a prop
+const CircularLoadingBar: React.FC<CircularProgressProps> = ({ progress }) => {
   return (
-    <svg className="circular-progress" width={size} height={size}>
-      <circle
-        className="circular-progress__background"
-        cx={center}
-        cy={center}
-        r={radius}
-        strokeWidth={`${strokeWidth}px`}
-      />
-      <circle
-        className="circular-progress__value"
-        cx={center}
-        cy={center}
-        r={radius}
-        strokeWidth={`${strokeWidth}px`}
-        // Start the progress marker at the top of the circle
-        transform={`rotate(-90 ${center} ${center})`}
-        style={{
-          strokeDasharray: circumference,
-          strokeDashoffset: offset,
-        }}
-      />
-    </svg>
+    <LoadingContainer viewBox="0 0 100 100">
+      <CircularProgress progress={progress} />
+    </LoadingContainer>
   );
 };
 
-export default CircularProgress;
+export default CircularLoadingBar;

@@ -3,7 +3,7 @@ import { useTheme } from "../../contexts/ThemeContext";
 import { FaGithub } from "react-icons/fa";
 import HoverIcon from "../../components/HoverIcon";
 import { FaRegFilePdf } from "react-icons/fa";
-
+import Ticker from "../../components/Ticker/Ticker";
 import CircularImage from "../../components/CircularImage";
 import { Heading, SubHeading, PText, PTitle } from "../../styles/text";
 import styled from "styled-components";

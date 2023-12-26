@@ -3,6 +3,8 @@ import React from "react";
 // import theme from "./theme";
 import GlobalStyle from "./styles/GlobalStyle";
 import { ThemeProvider } from "./contexts/ThemeContext";
+// import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // import logo from "./logo.svg";
 import {
@@ -14,13 +16,12 @@ import {
 
 import Resume from "./pages/Resume";
 
-import "./App.css";
 import Navbar from "./components/Navbar"; // Adjust the import path based on your file structure
 
 const App: React.FC = () => {
-  console.log("here");
   return (
     <div className="App">
+      <SpeedInsights />
       <ThemeProvider>
         <GlobalStyle />
         <Router>

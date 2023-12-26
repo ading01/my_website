@@ -1,5 +1,5 @@
 import SkillBar from "../components/SkillBar/SkillBar";
-import CircularLoadingBar from "../components/CircularBar/CircularProgress";
+import CircularLoadingBar from "../components/CircularBar/CircularLoadingBar";
 
 function SkillsContent() {
   return (
@@ -7,7 +7,8 @@ function SkillsContent() {
       <SkillBar label="HTML" percentage={90} />
       <SkillBar label="JavaScript" percentage={90} />
       <SkillBar label="Python" percentage={90} />
-      <CircularLoadingBar progress={75} />
+      <CircularLoadingBar progress={75} skill={"Typescript"} />
+      <CircularLoadingBar progress={75} skill={"React"} />
       {/* <CircularLoadingBar
         color="#3498db"
         name="TypeScript"

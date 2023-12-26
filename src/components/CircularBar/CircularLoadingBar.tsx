@@ -20,7 +20,6 @@ const animateProgress = (props: CircularProgressProps) => keyframes`
 // Extend the Props for the CircularProgress component to include 'skill'
 interface CircularProgressProps {
   progress: number;
-  skill: string; // Added skill property
 }
 
 // Styled circular progress bar (no changes here)
@@ -58,13 +57,13 @@ const CenterText = styled.text<{ labelColor?: string }>`
 `;
 
 // TypeScript React component that takes in the progress and skill as props
-const CircularLoadingBar: React.FC<CircularProgressProps> = ({
+const CircularLoadingBar: React.FC<{ progress: number; skill: string }> = ({
   progress,
   skill,
 }) => {
   return (
     <LoadingContainer viewBox="0 0 100 100">
-      <CircularProgress progress={progress} skill={skill} />
+      <CircularProgress progress={progress} />
       {/* Use skill prop to dynamically display the skill text */}
       <CenterText x="50" y="50" labelColor="#000">
         {skill}

@@ -21,27 +21,12 @@ const TickerContainer = styled.div`
 // Create a styled text component with the animation
 const TickerText = styled.div`
   display: inline-block;
-  font-size: 20vh;
+  font-size: 25vh;
   font-family: ${({ theme }) => theme.fonts.heading};
   color: ${({ theme }) => theme.texts.primary};
   transition: color 0.5s ease;
   animation: ${scrollAnimation} 30s linear infinite;
 `;
-
-// const TickerContainer = styled.div`
-//   overflow: hidden;
-//   white-space: nowrap;
-
-//   width: 100%;
-//   background-color: ${({ theme }) => theme.backgroundColor};
-//   font-family: ${({ theme }) => theme.fonts.heading};
-//   color: ${({ theme }) => theme.texts.primary};
-//   display: inline-block;
-//   font-size: 20vh;
-//   transition: background-color 0.6s ease, color 0.6s ease,
-
-//   animation: ${scrollAnimation} 30s linear infinite;
-// `;
 
 type TickerProps = {
   repeatText: string;

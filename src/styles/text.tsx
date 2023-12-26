@@ -41,6 +41,7 @@ export const PTitle = styled.p<{ mode: "light" | "dark" }>`
 // `;
 
 export const MenuItem = styled.li<{ mode: "light" | "dark" }>`
+  font-size: 6rem;
   font-family: ${({ theme }) => theme.fonts.heading};
   position: relative; // Essential for absolute positioning of pseudo-elements
   list-style: none; // Removing default list style

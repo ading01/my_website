@@ -9,13 +9,7 @@ import { Heading, SubHeading, PText, PTitle } from "../../styles/text";
 import styled from "styled-components";
 import { FaLinkedin } from "react-icons/fa";
 
-// const Heading = styled.h1`
-//   font-family: ${({ theme }) => theme.fonts.heading};
-//   color: ${({ theme }) => theme.texts.dark.primary};
-//   font-size: 1.5rem;
-//   margin: 0;
-//   padding: 0;
-// `;
+const HomeContainer = styled.div``;
 
 const TitleHeading = styled(Heading)`
   font-size: 3rem;

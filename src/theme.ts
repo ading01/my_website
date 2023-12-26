@@ -34,7 +34,7 @@ const darkTheme: DefaultTheme = {
   },
   texts: {
     primary: "white",
-    secondary: "white",
+    secondary: "grey",
     paragraph: "#ffffff",
   },
   hover_color: "magenta",

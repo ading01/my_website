@@ -8,7 +8,7 @@ import Ticker from "../components/Ticker/Ticker";
 import FadeInSection from "../ui/FadeInSection";
 import HomeContent from "../content/HomeContent/HomeContent";
 import ThemeToggleButton from "../components/ThemeToggleButton/ThemeToggleButton";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { useTheme } from "../contexts/ThemeContext";
 import { MenuItem } from "../styles/text";
 
@@ -46,6 +46,56 @@ interface Word {
 //   }
 // `;
 
+const SectionContainer = styled.div`
+  position: relative;
+  height: 95vh;
+  overflow: hidden;
+  display: flex; // Enables flexbox
+  justify-content: center; // Centers children horizontally
+  align-items: center; // Centers children vertically
+`;
+
+const HomeContentWrapper = styled.div`
+  position: relative; // Needed for z-index to take effect
+  z-index: 2; // Higher than the Ticker's z-index, to ensure content is above ticker
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+`;
+
+const StyledTicker = styled(Ticker)`
+  position: absolute;
+  bottom: 0; // This positions the ticker at the bottom of SectionContainer
+  left: 0; // Aligns the ticker to the left of SectionContainer
+  width: 100%; // Ticker spans the full width of SectionContainer
+  z-index: 1; // Ensures the ticker is behind the HomeContentWrapper
+`;
+
+const scroll = keyframes`
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+`;
+
+const WelcomeText = styled.h1`
+  color: ${({ theme }) => theme.texts.secondary};
+  font-family: ${({ theme }) => theme.fonts.heading};
+  font-size: 50vw; // You can adjust this value
+  position: absolute;
+  white-space: nowrap;
+  top: -50%; // Adjust this value as needed to place the text vertically
+  left: 0;
+  // overflow-x: hidden; // Prevents horizontal scroll inside this container
+
+  width: 100vw;
+
+  // Apply the animation
+  animation: ${scroll} 30s linear infinite; // Adjust time as needed
+`;
 function Resume() {
   const [words, setWords] = useState<Word[]>([]);
   const { theme } = useTheme();
@@ -113,12 +163,14 @@ function Resume() {
 
   return (
     <div id="resume" className="resume">
-      <Ticker repeatText="Hello, my name is Allan." />
-      <div id="home" className="section1">
-        <FadeInSection>
-          <HomeContent />
-        </FadeInSection>
-      </div>
+      <WelcomeText>Welcome</WelcomeText>
+      <SectionContainer id="home">
+        <HomeContentWrapper>
+          <FadeInSection>
+            <HomeContent />
+          </FadeInSection>
+        </HomeContentWrapper>
+      </SectionContainer>
       <FadeInSection>
         <div id="menu" className="section1">
           <div className="full-width">
@@ -140,21 +192,22 @@ function Resume() {
           </div>
         </div>
       </FadeInSection>
-      <div id="experience" className="section1">
+      <SectionContainer id="experience">
         <ResumeCard
           section_name="Experience"
           resume_content={<ExperienceContent />}
         />
-      </div>
-      <div id="education" className="section1">
+      </SectionContainer>
+      <SectionContainer id="education">
         <ResumeCard
           section_name="Education"
           resume_content={<EducationContent />}
         />
-      </div>
-      <div id="skills" className="section1">
+      </SectionContainer>
+
+      <SectionContainer id="skills">
         <ResumeCard section_name="Skills" resume_content={<SkillsContent />} />
-      </div>
+      </SectionContainer>
     </div>
   );
 }

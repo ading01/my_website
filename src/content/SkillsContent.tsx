@@ -41,14 +41,12 @@ const SkillsContainer: React.FC<SkillsContainerProps> = ({
 
   return (
     <FadeInSection>
-      <div>
-        <TitleHeading>{title}</TitleHeading>
-        {groupedChildren.map((group, index) => (
-          <FadeInSection key={index}>
-            <GridContainer>{group}</GridContainer>
-          </FadeInSection>
-        ))}
-      </div>
+      <TitleHeading>{title}</TitleHeading>
+      {groupedChildren.map((group, index) => (
+        <FadeInSection key={index}>
+          <GridContainer>{group}</GridContainer>
+        </FadeInSection>
+      ))}
     </FadeInSection>
   );
 };

@@ -29,6 +29,7 @@ const Navbar = () => {
   return (
     <NavBarContainer>
       <NavItem href="#home">Home</NavItem>
+      <NavItem href="#experience">Experience</NavItem>
       <NavItem href="#education">Education</NavItem>
       <NavItem href="#skills">Skills</NavItem>
       <ThemeToggleButton />

@@ -10,7 +10,7 @@ import styled from "styled-components";
 import { useTheme } from "../contexts/ThemeContext";
 import { MenuItem } from "../styles/text";
 import { Link } from "react-router-dom";
-
+import Navbar from "../components/Navbar";
 interface Word {
   id: number;
   left: string;

@@ -7,7 +7,12 @@ const GlobalStyle = createGlobalStyle`
     transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
     font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
     scroll: smooth;
+    scroll-behavior: smooth;
   }
+  *, html {
+
+    scroll-behavior: smooth !important;
+}
 `;
 
 export default GlobalStyle;

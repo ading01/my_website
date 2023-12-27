@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { GiHamburger } from "react-icons/gi";
 
 // Define an interface for your DropdownMenu props
 interface DropdownMenuProps {
@@ -20,16 +21,38 @@ const MenuIcon = styled.div`
 
 // Use the interface for the styled component
 const DropdownMenu = styled.div<DropdownMenuProps>`
-  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   position: fixed;
-  top: 40px; // Adjust as needed for your layout
-  right: 10px;
-  background-color: white;
-  border: 1px solid #ddd;
-  z-index: 100;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  background-color: ${({ theme }) => theme.backgroundColor};
+  box-sizing: border-box;
+  z-index: 0;
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+  position: absolute;
+  top: 100%; // Position the dropdown right below the Navbar
+
+  overflow: hidden; // Hide the overflow when the menu is closed
+  max-height: ${({ isOpen }) =>
+    isOpen ? "300px" : "0"}; // Adjust the max height as needed
+  transition: max-height 0.3s ease-in-out; // Smooth transition for the max-height
 
   @media (min-width: 768px) {
-    display: none; // Hide by default, will be toggled by JavaScript
+    display: none;
+  }
+
+  a {
+    text-align: center;
+    font-family: ${({ theme }) => theme.fonts.heading};
+    color: ${({ theme }) => theme.texts.primary};
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    flex: none;
+
+    &:hover {
+      background-color: #1974b4;
+    }
   }
 `;
 
@@ -40,7 +63,7 @@ const MobileMenu: React.FC = () => {
   return (
     <>
       <MenuIcon onClick={() => setIsOpen(!isOpen)}>
-        <GiHamburgerMenu />
+        <GiHamburger size={42} />
       </MenuIcon>
       <DropdownMenu isOpen={isOpen}>
         {/* List your menu items here */}

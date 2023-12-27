@@ -27,7 +27,7 @@ const NavBarContainer = styled.nav`
   top: 0; /* Align to the top */
   left: 0; /* Align to the left to ensure full width coverage */
   display: flex; /* Use flexbox for internal alignment */
-  justify-content: center; /* Center items */
+  justify-content: right; /* Center items */
   align-items: center; /* Align items vertically */
   width: 100%; /* Full width of the viewport */
   padding: 10px; /* Add padding for breathing space */

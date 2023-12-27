@@ -1,6 +1,7 @@
 import { useTheme } from "../contexts/ThemeContext";
 import { Heading, SubHeading, PText, PTitle } from "../styles/text";
 import FadeInSection from "../ui/FadeInSection";
+import styled from "styled-components";
 
 let ResumeContent = [
   {
@@ -25,13 +26,39 @@ let ResumeContent = [
       "Analyzed CMTS monitoring data by automating R scripts to compare hardware performance after customer upgrades",
     ],
   },
+  {
+    company_name: "Lily Lab at Yale",
+    location: "New Haven, CT",
+    position: "Research Intern",
+    date: "Janurary-May 2022",
+    details: [
+      "Increased the accuracy of an NLP search engine by updating text crawler functionality to improve user experience",
+      "Tested the NLP search engine by implementing a bot to search a random set of keywords to show a reduction of 'no results found' outcomes",
+    ],
+  },
+  {
+    company_name: "DreamKit",
+    location: "New Haven, CT",
+    position: "Web Design/Marketing Intern",
+    date: "Janurary-May 2022",
+    details: [
+      "Implemented interactive blogging features on DreamKit’s homepage to promote community engagement by using Squarespace’s platform",
+      "Pushed to create several partnerships by calling existing non-profit organizations in New Haven to expand the reach of DreamKit’s platform",
+    ],
+  },
 ];
+
+const ContentDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
 
 function ExperienceContent() {
   const { theme } = useTheme();
 
   return (
-    <div className="experience-content">
+    <ContentDiv>
       {ResumeContent.map((job, index) => (
         <FadeInSection key={index}>
           {/* <div key={index}> */}
@@ -51,7 +78,7 @@ function ExperienceContent() {
           {/* </div> */}
         </FadeInSection>
       ))}
-    </div>
+    </ContentDiv>
   );
 }
 

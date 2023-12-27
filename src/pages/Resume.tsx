@@ -17,37 +17,9 @@ interface Word {
   top: string;
 }
 
-// export const MenuItem = styled.li<{ mode: "light" | "dark" }>`
-//   width: 100%;
-//   display: inline-block;
-//   text-align: left;
-//   color: ${({ theme }) => theme.texts.primary};
-//   background: ${({ theme }) => theme.background};
-//   background-size: 200%;
-//   transition: 0.2s ease-out;
-
-//   margin: 0;
-//   padding: 0;
-//   transition: background-color 0.3s ease, color 0.3s ease,
-//     border-color 0.3s ease;
-// `;
-
-// const MenuItem = styled.li`
-//   color: ${({ theme }) => theme.texts.primary};
-
-//   &:hover {
-//     background-position: ${({ theme }) => theme.menuItemHoverBackground};
-//   }
-
-//   a {
-//     color: ${({ theme }) => theme.menuItemTextColor};
-//     text-decoration: none;
-//   }
-// `;
-
 const SectionContainer = styled.div`
   position: relative;
-  height: 95vh;
+  min-height: 95vh;
   overflow: hidden;
   display: flex; // Enables flexbox
   justify-content: center; // Centers children horizontally

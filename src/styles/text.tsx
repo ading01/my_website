@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
-export const Heading = styled.h1<{ mode: "light" | "dark" }>`
+export const Heading = styled.h1`
   font-family: ${({ theme }) => theme.fonts.heading};
   font-size: 1.5rem;
   color: ${({ theme }) => theme.texts.primary};
   margin: 0;
+  transition: color 0.5s ease;
   padding: 0;
 `;
 
@@ -13,6 +14,7 @@ export const SubHeading = styled.h2<{ mode: "light" | "dark" }>`
   color: ${({ theme }) => theme.texts.secondary};
   margin: 0;
   padding: 0;
+  transition: color 0.5s ease;
 `;
 
 export const PText = styled.p<{ mode: "light" | "dark" }>`
@@ -20,6 +22,7 @@ export const PText = styled.p<{ mode: "light" | "dark" }>`
   margin: 0;
   padding: 0;
   color: ${({ theme }) => theme.texts.primary};
+  transition: color 0.5s ease;
 `;
 
 export const PTitle = styled.p<{ mode: "light" | "dark" }>`
@@ -29,6 +32,8 @@ export const PTitle = styled.p<{ mode: "light" | "dark" }>`
   margin: 0;
   margin-bottom: 0.5rem;
   padding: 0;
+  color: ${({ theme }) => theme.texts.primary};
+  transition: color 0.5s ease;
 `;
 
 // export const MenuItem = styled.li<{ mode: "light" | "dark" }>`

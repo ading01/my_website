@@ -1,9 +1,7 @@
 import "./HomeContent.css";
-import { useTheme } from "../../contexts/ThemeContext";
 import { FaGithub } from "react-icons/fa";
 import HoverIcon from "../../components/HoverIcon";
 import { FaRegFilePdf } from "react-icons/fa";
-import Ticker from "../../components/Ticker/Ticker";
 import CircularImage from "../../components/CircularImage";
 import { Heading, SubHeading, PText, PTitle } from "../../styles/text";
 import styled from "styled-components";
@@ -13,15 +11,19 @@ const HomeContainer = styled.div``;
 
 const TitleHeading = styled(Heading)`
   font-size: 3rem;
+  font-family: ${({ theme }) => theme.fonts.heading};
+  color: ${({ theme }) => theme.texts.primary};
+  margin: 0;
+  transition: color 0.5s ease;
+  padding: 0;
 `;
 
 function HomeContent() {
-  const { theme } = useTheme();
   return (
     <div className="home-container">
       <div className="left-column">
-        <TitleHeading mode={theme}>Hi! My name is Allan.</TitleHeading>
-        <TitleHeading mode={theme}>Welcome to my website</TitleHeading>
+        <TitleHeading>Hi! My name is Allan.</TitleHeading>
+        <TitleHeading>Welcome to my website</TitleHeading>
         {/* <FaGithub style={{ color: "red" }} /> */}
         <a href="https://github.com/ading01">
           <HoverIcon as="span" icon={<FaGithub />} hoverColor="#ff6347" />
@@ -38,7 +40,7 @@ function HomeContent() {
           src="../profile_picture.jpeg"
           alt="Sample Image"
           borderColor="green"
-          borderWidth={10}
+          borderWidth={0}
         ></CircularImage>
       </div>
     </div>

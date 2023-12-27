@@ -22,6 +22,13 @@ interface CircularProgressProps {
   progress: number;
 }
 
+const GreyCircle = styled.circle`
+  fill: none;
+  stroke: #d3d3d3; // Grey color for the unfilled part
+  stroke-width: 6;
+  stroke-linecap: round;
+`;
+
 // Styled circular progress bar (no changes here)
 const CircularProgress = styled.circle.attrs<CircularProgressProps>(
   (props) => ({
@@ -32,7 +39,7 @@ const CircularProgress = styled.circle.attrs<CircularProgressProps>(
 )<CircularProgressProps>`
   fill: none;
   stroke: ${(props) => props.color || "#4f88ef"}; // Default color is #4f88ef
-  stroke-width: 4;
+  stroke-width: 6;
   stroke-linecap: round;
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
@@ -49,7 +56,7 @@ const LoadingContainer = styled.svg`
 
 // Styled text component (no changes here)
 const CenterText = styled.text<{ labelColor?: string }>`
-  fill: ${(props) => props.labelColor || "#333"};
+  fill: ${({ theme }) => theme.texts.primary};
   font-size: 14px;
   text-anchor: middle;
   dominant-baseline: central;
@@ -63,9 +70,11 @@ const CircularLoadingBar: React.FC<{
 }> = ({ progress, skill, color }) => {
   return (
     <LoadingContainer viewBox="0 0 100 100">
+      <GreyCircle r={radius} cx={50} cy={50} />
+
       <CircularProgress progress={progress} color={color} />
       {/* Use skill prop to dynamically display the skill text */}
-      <CenterText x="50" y="50" labelColor="#000">
+      <CenterText x="50" y="50" labelColor="#fff">
         {skill}
       </CenterText>
     </LoadingContainer>

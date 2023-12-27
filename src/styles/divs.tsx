@@ -1,10 +1,10 @@
-import exp from "constants";
 import styled from "styled-components";
 
 export const ResumeCardContainer = styled.div`
   width: 50vw;
   background-color: ${({ theme }) => theme.backgroundColor};
   margin: 20px;
+  transition: background-color 0.5s ease;
 `;
 
 export const ResumeCardRow = styled.div`

@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import styled from "styled-components";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { useTheme } from "../../contexts/ThemeContext";

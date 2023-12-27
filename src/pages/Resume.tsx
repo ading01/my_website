@@ -6,10 +6,10 @@ import ExperienceContent from "../content/ExperienceContent";
 import Ticker from "../components/Ticker/Ticker";
 import FadeInSection from "../ui/FadeInSection";
 import HomeContent from "../content/HomeContent/HomeContent";
-import ThemeToggleButton from "../components/ThemeToggleButton/ThemeToggleButton";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { useTheme } from "../contexts/ThemeContext";
 import { MenuItem } from "../styles/text";
+import { Link } from "react-router-dom";
 
 interface Word {
   id: number;
@@ -18,12 +18,17 @@ interface Word {
 }
 
 const SectionContainer = styled.div`
+  margin-top: 5rem;
   position: relative;
   min-height: 95vh;
   overflow: hidden;
   display: flex; // Enables flexbox
   justify-content: center; // Centers children horizontally
   align-items: center; // Centers children vertically
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
 `;
 
 const HomeContentWrapper = styled.div`
@@ -35,38 +40,6 @@ const HomeContentWrapper = styled.div`
   height: 100%;
 `;
 
-const StyledTicker = styled(Ticker)`
-  position: absolute;
-  bottom: 0; // This positions the ticker at the bottom of SectionContainer
-  left: 0; // Aligns the ticker to the left of SectionContainer
-  width: 100%; // Ticker spans the full width of SectionContainer
-  z-index: 1; // Ensures the ticker is behind the HomeContentWrapper
-`;
-
-const scroll = keyframes`
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-`;
-
-const WelcomeText = styled.h1`
-  color: ${({ theme }) => theme.texts.secondary};
-  font-family: ${({ theme }) => theme.fonts.heading};
-  font-size: 50vw; // You can adjust this value
-  position: absolute;
-  white-space: nowrap;
-  top: -50%; // Adjust this value as needed to place the text vertically
-  left: 0;
-  // overflow-x: hidden; // Prevents horizontal scroll inside this container
-
-  width: 100vw;
-
-  // Apply the animation
-  animation: ${scroll} 30s linear infinite; // Adjust time as needed
-`;
 function Resume() {
   const [words, setWords] = useState<Word[]>([]);
   const { theme } = useTheme();
@@ -143,27 +116,25 @@ function Resume() {
           </FadeInSection>
         </HomeContentWrapper>
       </SectionContainer>
-      <FadeInSection>
+      {/* <FadeInSection>
         <div id="menu" className="section1">
           <div className="full-width">
             <nav>
               <ul>
-                <MenuItem mode={theme}>
-                  <a href="#experience">Experience</a>
-                </MenuItem>
-
-                <MenuItem mode={theme}>
-                  <a href="#education">Education</a>
-                </MenuItem>
-
-                <MenuItem mode={theme}>
-                  <a href="#skills">Skills</a>
-                </MenuItem>
+                <a href="#experience">
+                  <MenuItem mode={theme}>Experience</MenuItem>
+                </a>
+                <StyledLink href="#education">
+                  <MenuItem mode={theme}>Education</MenuItem>
+                </StyledLink>
+                <StyledLink to="#skills">
+                  <MenuItem mode={theme}>Skills</MenuItem>
+                </StyledLink>
               </ul>
             </nav>
           </div>
         </div>
-      </FadeInSection>
+      </FadeInSection> */}
       <SectionContainer id="experience">
         <ResumeCard
           section_name="Experience"

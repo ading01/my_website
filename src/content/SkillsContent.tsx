@@ -1,34 +1,52 @@
-import CircularLoadingBar from "../components/CircularBar/CircularLoadingBar";
+import React, { ReactElement } from "react";
 import styled from "styled-components";
-import React from "react";
+import CircularLoadingBar from "../components/CircularBar/CircularLoadingBar";
+import FadeInSection from "../ui/FadeInSection";
 
 type SkillsContainerProps = {
-  title: String;
+  title: string;
   children: React.ReactNode;
 };
 
 const TitleHeading = styled.h1`
   font-size: 2rem;
   text-align: center;
+  transition: color 0.5s ease;
   font-family: ${({ theme }) => theme.fonts.heading};
   color: ${({ theme }) => theme.texts.primary};
 `;
 
 const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr); // Creates 4 columns
-  gap-x: 20px; // Adjust this value for spacing between items
-  gap-y: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 `;
 
 const SkillsContainer: React.FC<SkillsContainerProps> = ({
   title,
   children,
 }) => {
+  type AccumulatorType = ReactElement[][];
+
+  const groupedChildren = React.Children.toArray(
+    children
+  ).reduce<AccumulatorType>((acc, child, index) => {
+    const groupIndex = Math.floor(index / 4);
+    if (!acc[groupIndex]) {
+      acc[groupIndex] = [];
+    }
+    acc[groupIndex].push(child as ReactElement);
+    return acc;
+  }, []);
+
   return (
     <div>
       <TitleHeading>{title}</TitleHeading>
-      <GridContainer>{children}</GridContainer>
+      {groupedChildren.map((group, index) => (
+        <FadeInSection key={index}>
+          <GridContainer>{group}</GridContainer>
+        </FadeInSection>
+      ))}
     </div>
   );
 };
@@ -66,6 +84,7 @@ function SkillsContent() {
           skill={"Express.js"}
           color={"#FFA500"}
         />
+        {/* Add more CircularLoadingBar components as needed */}
       </SkillsContainer>
       <SkillsContainer title="Technologies">
         <CircularLoadingBar progress={90} skill={"MongoDB"} color={"#00FF00"} />
@@ -76,6 +95,7 @@ function SkillsContent() {
           color={"#00FF00"}
         />
         <CircularLoadingBar progress={50} skill={"Docker"} color={"#00FF00"} />
+        {/* Add more CircularLoadingBar components as needed */}
       </SkillsContainer>
     </div>
   );

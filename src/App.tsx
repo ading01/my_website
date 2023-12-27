@@ -1,6 +1,7 @@
 import React from "react";
 // import { ThemeProvider } from "styled-components";
 // import theme from "./theme";
+import "./App.css";
 import GlobalStyle from "./styles/GlobalStyle";
 import { ThemeProvider } from "./contexts/ThemeContext";
 // import { SpeedInsights } from "@vercel/speed-insights/next";

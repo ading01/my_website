@@ -63,8 +63,8 @@ function ExperienceContent() {
         <FadeInSection key={index}>
           {/* <div key={index}> */}
           <div className="container row1">
-            <Heading mode={theme}>{job.company_name}</Heading>
-            <Heading mode={theme}>{job.location}</Heading>
+            <Heading>{job.company_name}</Heading>
+            <Heading>{job.location}</Heading>
           </div>
           <div className="container row2">
             <SubHeading mode={theme}>{job.position}</SubHeading>

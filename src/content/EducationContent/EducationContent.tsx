@@ -11,8 +11,8 @@ function EducationContent() {
       <FadeInSection>
         <div className="container row1">
           {/* <div>Yale University</div> */}
-          <Heading mode={theme}>Yale University</Heading>
-          <Heading mode={theme}>New Haven, CT</Heading>
+          <Heading>Yale University</Heading>
+          <Heading>New Haven, CT</Heading>
         </div>
         <div className="container row2">
           <SubHeading mode={theme}>
@@ -21,7 +21,7 @@ function EducationContent() {
           <SubHeading mode={theme}>Winter 2023</SubHeading>
         </div>
         <div className="coursework-section">
-          <PTitle mode={theme}>Relavent Coursework</PTitle>
+          <PTitle mode={theme}>Relevent Coursework</PTitle>
           <div className="courses-container">
             <span className="course">
               <PText mode={theme}>Data Structures</PText>

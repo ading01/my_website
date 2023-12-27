@@ -1,6 +1,7 @@
 import { useTheme } from "../../contexts/ThemeContext";
 import Pill from "../../components/Pill";
 import { Heading, SubHeading, PText, PTitle } from "../../styles/text";
+import { SplitContainer, MainRow, SubRow } from "../../styles/divs";
 import FadeInSection from "../../ui/FadeInSection";
 
 const relevant_courses: string[] = [
@@ -26,17 +27,18 @@ function EducationContent() {
   return (
     <div className="education-content">
       <FadeInSection>
-        <div className="container row1">
-          {/* <div>Yale University</div> */}
-          <Heading>Yale University</Heading>
-          <Heading>New Haven, CT</Heading>
-        </div>
-        <div className="container row2">
-          <SubHeading mode={theme}>
-            B.S. in Computer Science | GPA: 3.67/4.0
-          </SubHeading>
-          <SubHeading mode={theme}>Winter 2023</SubHeading>
-        </div>
+        <SplitContainer>
+          <MainRow>
+            <Heading>Yale University</Heading>
+            <Heading>New Haven, CT</Heading>
+          </MainRow>
+          <SubRow>
+            <SubHeading mode={theme}>
+              B.S. in Computer Science | GPA: 3.67/4.0
+            </SubHeading>
+            <SubHeading mode={theme}>Winter 2023</SubHeading>
+          </SubRow>
+        </SplitContainer>
         <div className="coursework-section">
           <PTitle mode={theme}>Relevent Coursework</PTitle>
           <div className="courses-container">

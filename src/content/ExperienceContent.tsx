@@ -2,6 +2,7 @@ import { useTheme } from "../contexts/ThemeContext";
 import { Heading, SubHeading, PText, PTitle } from "../styles/text";
 import FadeInSection from "../ui/FadeInSection";
 import styled from "styled-components";
+import { SplitContainer, MainRow, SubRow, ResumeDetails } from "../styles/divs";
 
 let ResumeContent = [
   {
@@ -62,18 +63,20 @@ function ExperienceContent() {
       {ResumeContent.map((job, index) => (
         <FadeInSection key={index}>
           {/* <div key={index}> */}
-          <div className="container row1">
-            <Heading>{job.company_name}</Heading>
-            <Heading>{job.location}</Heading>
-          </div>
-          <div className="container row2">
-            <SubHeading mode={theme}>{job.position}</SubHeading>
-            <SubHeading mode={theme}>{job.date}</SubHeading>
-          </div>
+          <SplitContainer>
+            <MainRow>
+              <Heading>{job.company_name}</Heading>
+              <Heading>{job.location}</Heading>
+            </MainRow>
+            <SubRow>
+              <SubHeading mode={theme}>{job.position}</SubHeading>
+              <SubHeading mode={theme}>{job.date}</SubHeading>
+            </SubRow>
+          </SplitContainer>
           {job.details.map((detail, index) => (
-            <div className="resume-block" key={index}>
+            <ResumeDetails>
               <PText mode={theme}>{detail}</PText>
-            </div>
+            </ResumeDetails>
           ))}
           {/* </div> */}
         </FadeInSection>

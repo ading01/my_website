@@ -7,6 +7,10 @@ export const Heading = styled.h1`
   margin: 0;
   transition: color 0.5s ease;
   padding: 0;
+
+  @media (max-width: 768px) {
+    display: block; // Or you can remove this line as h1 is block by default
+  }
 `;
 
 export const SubHeading = styled.h2<{ mode: "light" | "dark" }>`
@@ -15,6 +19,10 @@ export const SubHeading = styled.h2<{ mode: "light" | "dark" }>`
   margin: 0;
   padding: 0;
   transition: color 0.5s ease;
+
+  @media (max-width: 768px) {
+    display: block; // Or you can remove this line as h2 is block by default
+  }
 `;
 
 export const PText = styled.p<{ mode: "light" | "dark" }>`

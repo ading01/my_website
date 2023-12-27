@@ -11,6 +11,12 @@ const HomeContainer = styled.div`
   flex-direction: row;
   /* background-color: aqua; */
   width: 45vw;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
 `;
 
 const TitleHeading = styled(Heading)`
@@ -20,14 +26,22 @@ const TitleHeading = styled(Heading)`
   margin: 0;
   transition: color 0.5s ease;
   padding: 0;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+  }
 `;
 
 const LeftColumn = styled.div`
-  .left-column {
-    flex: 75%;
+  flex: 75%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
   }
 `;
 
@@ -44,7 +58,6 @@ function HomeContent() {
       <LeftColumn>
         <TitleHeading>Hi! My name is Allan.</TitleHeading>
         <TitleHeading>Welcome to my website</TitleHeading>
-        {/* <FaGithub style={{ color: "red" }} /> */}
         <a href="https://github.com/ading01">
           <HoverIcon as="span" icon={<FaGithub />} hoverColor="#ff6347" />
         </a>

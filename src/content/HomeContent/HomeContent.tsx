@@ -1,4 +1,3 @@
-import "./HomeContent.css";
 import { FaGithub } from "react-icons/fa";
 import HoverIcon from "../../components/HoverIcon";
 import { FaRegFilePdf } from "react-icons/fa";
@@ -7,7 +6,12 @@ import { Heading, SubHeading, PText, PTitle } from "../../styles/text";
 import styled from "styled-components";
 import { FaLinkedin } from "react-icons/fa";
 
-const HomeContainer = styled.div``;
+const HomeContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  /* background-color: aqua; */
+  width: 45vw;
+`;
 
 const TitleHeading = styled(Heading)`
   font-size: 3rem;
@@ -18,10 +22,26 @@ const TitleHeading = styled(Heading)`
   padding: 0;
 `;
 
+const LeftColumn = styled.div`
+  .left-column {
+    flex: 75%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+const RightColumn = styled.div`
+  flex: 25%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+`;
+
 function HomeContent() {
   return (
-    <div className="home-container">
-      <div className="left-column">
+    <HomeContainer>
+      <LeftColumn>
         <TitleHeading>Hi! My name is Allan.</TitleHeading>
         <TitleHeading>Welcome to my website</TitleHeading>
         {/* <FaGithub style={{ color: "red" }} /> */}
@@ -34,16 +54,16 @@ function HomeContent() {
         <a href="../../Allan Ding Resume 12:26:23.pdf">
           <HoverIcon as="span" icon={<FaRegFilePdf />} hoverColor="#00b144" />
         </a>
-      </div>
-      <div className="right-column">
+      </LeftColumn>
+      <RightColumn>
         <CircularImage
           src="../profile_picture.jpeg"
           alt="Sample Image"
           borderColor="green"
           borderWidth={0}
         ></CircularImage>
-      </div>
-    </div>
+      </RightColumn>
+    </HomeContainer>
   );
 }
 

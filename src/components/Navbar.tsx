@@ -38,6 +38,7 @@ const NavBarContainer = styled.nav`
   @media (max-width: 768px) {
     justify-content: space-between; /* Align items to the sides */
     background-color: ${({ theme }) => theme.backgroundColor};
+    transition: background-color 0.5s ease;
   }
 `;
 
@@ -50,6 +51,7 @@ const NavItem = styled.a`
   transition: color 0.5s ease;
   @media (max-width: 768px) {
     display: none;
+    transition: color 0.5s ease, background-color 0.5s ease;
   }
 `;
 

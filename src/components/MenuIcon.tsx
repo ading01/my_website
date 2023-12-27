@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GiHamburger } from "react-icons/gi";
+import { useTheme } from "styled-components";
 
 // Define an interface for your DropdownMenu props
 interface DropdownMenuProps {
@@ -13,6 +14,7 @@ const MenuIcon = styled.div`
   top: 10px;
   right: 10px;
   z-index: 100; // Above other content
+  color: ${({ theme }) => theme.texts.primary};
 
   @media (max-width: 768px) {
     display: block; // Only show on small screens
@@ -49,6 +51,7 @@ const DropdownMenu = styled.div<DropdownMenuProps>`
     padding: 10px 20px;
     text-decoration: none;
     flex: none;
+    transition: background-color 0.5s ease, color 0.5s ease;
 
     &:hover {
       background-color: #1974b4;
@@ -58,12 +61,14 @@ const DropdownMenu = styled.div<DropdownMenuProps>`
 
 // The component
 const MobileMenu: React.FC = () => {
+  const { theme } = useTheme();
+  const iconColor = theme === "light" ? "white" : "black";
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
       <MenuIcon onClick={() => setIsOpen(!isOpen)}>
-        <GiHamburger size={42} />
+        <GiHamburger size={39} />
       </MenuIcon>
       <DropdownMenu isOpen={isOpen}>
         {/* List your menu items here */}

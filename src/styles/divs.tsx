@@ -18,4 +18,5 @@ export const LeftColumn = styled.div`
 
 export const RightColumn = styled.div`
   flex: 75%;
+  padding: 10px;
 `;

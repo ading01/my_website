@@ -14,8 +14,14 @@ const relevant_courses: string[] = [
   "Computer Organization",
 ];
 
+const activities: string[] = [
+  "Yale Men's Varsity Fencing Team",
+  "Chinese American Students Association",
+];
+
 function EducationContent() {
   const { theme } = useTheme();
+  const borderColor = theme === "light" ? "#5e8bed" : "#15aee1";
 
   return (
     <div className="education-content">
@@ -34,20 +40,34 @@ function EducationContent() {
         <div className="coursework-section">
           <PTitle mode={theme}>Relevent Coursework</PTitle>
           <div className="courses-container">
-            {relevant_courses.map((course, index) => (
-              <Pill key={index} borderColor="blue" textColor="blue">
-                {course}
-              </Pill>
-            ))}
+            {relevant_courses.map((course, index) => {
+              return (
+                <Pill
+                  key={index}
+                  borderColor={borderColor}
+                  textColor={borderColor}
+                >
+                  {course}
+                </Pill>
+              );
+            })}
           </div>
         </div>
 
         <div className="activities-section">
           <PTitle mode={theme}>Activities</PTitle>
           <div className="activities-container">
-            <div className="activity">
-              <PText mode={theme}>Yale Men's Varsity Fencing Team</PText>
-            </div>
+            {activities.map((activity, index) => {
+              return (
+                <Pill
+                  key={index}
+                  borderColor={borderColor}
+                  textColor={borderColor}
+                >
+                  {activity}
+                </Pill>
+              );
+            })}
           </div>
         </div>
       </FadeInSection>

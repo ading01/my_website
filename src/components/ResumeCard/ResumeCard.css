@@ -24,7 +24,6 @@
   /* Using flex-wrap allows the course elements to wrap onto the next line */
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
 }
 
 .course {

@@ -21,6 +21,8 @@ const NavItem = styled.a`
   color: ${({ theme }) => theme.texts.primary};
   margin-right: 1rem;
   text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.5s ease;
 `;
 
 const Navbar = () => {

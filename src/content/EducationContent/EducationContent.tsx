@@ -1,7 +1,18 @@
 import { useTheme } from "../../contexts/ThemeContext";
-
+import Pill from "../../components/Pill";
 import { Heading, SubHeading, PText, PTitle } from "../../styles/text";
 import FadeInSection from "../../ui/FadeInSection";
+
+const relevant_courses: string[] = [
+  "Data Structures",
+  "Systems Programming",
+  "Algorithms",
+  "Object-Oriented Programming",
+  "Software Engineering",
+  "Human-Computer Interaction",
+  "Full Stack Web Programming",
+  "Computer Organization",
+];
 
 function EducationContent() {
   const { theme } = useTheme();
@@ -23,12 +34,11 @@ function EducationContent() {
         <div className="coursework-section">
           <PTitle mode={theme}>Relevent Coursework</PTitle>
           <div className="courses-container">
-            <span className="course">
-              <PText mode={theme}>Data Structures</PText>
-            </span>
-            <span className="course">
-              <PText mode={theme}>Systems Programming</PText>
-            </span>
+            {relevant_courses.map((course, index) => (
+              <Pill key={index} borderColor="blue" textColor="blue">
+                {course}
+              </Pill>
+            ))}
           </div>
         </div>
 

@@ -51,7 +51,6 @@ const NavItem = styled.a`
   transition: color 0.5s ease;
   @media (max-width: 768px) {
     display: none;
-    transition: color 0.5s ease, background-color 0.5s ease;
   }
 `;
 

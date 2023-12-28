@@ -28,6 +28,22 @@ const SectionContainer = styled.div`
   transition: background-color 0.5s ease;
 `;
 
+const HeaderContainer = styled.div`
+  margin-top: 5rem;
+  position: relative;
+  min-height: 95vh;
+  overflow: hidden;
+  display: flex; // Enables flexbox
+  justify-content: center; // Centers children horizontally
+  align-items: center; // Centers children vertically
+  transition: background-color 0.5s ease;
+
+  @media (max-width: 768px) {
+    align-items: flex-start; // Aligns children to the start of the container
+    top: 10vh;
+  }
+`;
+
 const StyledLink = styled(Link)`
   text-decoration: none;
 `;
@@ -110,13 +126,13 @@ function Resume() {
     <div id="resume" className="resume">
       <Ticker repeatText="Welcome" />
       {/* <WelcomeText>Welcome</WelcomeText> */}
-      <SectionContainer id="home">
+      <HeaderContainer id="home">
         <HomeContentWrapper>
           <FadeInSection>
             <HomeContent />
           </FadeInSection>
         </HomeContentWrapper>
-      </SectionContainer>
+      </HeaderContainer>
       {/* <FadeInSection>
         <div id="menu" className="section1">
           <div className="full-width">

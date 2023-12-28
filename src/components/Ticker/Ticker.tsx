@@ -19,7 +19,7 @@ const TickerContainer = styled.div`
   overflow: hidden;
   top: 70px;
   @media (max-width: 768px) {
-    top: 250px;
+    top: 400px;
   }
 `;
 
@@ -34,7 +34,8 @@ const TickerText = styled.div`
   z-index: 1;
   overflow: auto;
   @media (max-width: 768px) {
-    font-size: 75vh;
+    font-size: 60vh;
+    animation: ${scrollAnimation} 10s linear infinite;
   }
 `;
 

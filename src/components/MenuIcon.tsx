@@ -31,7 +31,6 @@ const DropdownMenu = styled.div<DropdownMenuProps>`
   background-color: ${({ theme }) => theme.backgroundColor};
   box-sizing: border-box;
   z-index: 0;
-  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   position: absolute;
   top: 100%; // Position the dropdown right below the Navbar
 
@@ -62,8 +61,11 @@ const DropdownMenu = styled.div<DropdownMenuProps>`
 
 // The component
 const MobileMenu: React.FC = () => {
-  const { theme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleNavItemClick = () => {
+    setIsOpen(false);
+  };
 
   return (
     <>
@@ -72,10 +74,19 @@ const MobileMenu: React.FC = () => {
       </MenuIcon>
       <DropdownMenu isOpen={isOpen}>
         {/* List your menu items here */}
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
+        <a onClick={handleNavItemClick} href="#experience">
+          Experience
+        </a>
+        <a onClick={handleNavItemClick} href="#education">
+          Education
+        </a>
+        <a onClick={handleNavItemClick} href="#skills">
+          Skills
+        </a>
+
+        <a onClick={handleNavItemClick} href="#projects">
+          Projects
+        </a>
       </DropdownMenu>
     </>
   );

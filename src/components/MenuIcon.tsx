@@ -37,8 +37,7 @@ const DropdownMenu = styled.div<DropdownMenuProps>`
   overflow: hidden; // Hide the overflow when the menu is closed
   max-height: ${({ isOpen }) =>
     isOpen ? "300px" : "0"}; // Adjust the max height as needed
-  transition: max-height 0.3s ease-in-out; // Smooth transition for the max-height
-  transition: background-color 0.5s ease;
+  transition: max-height 0.3s ease-in-out, background-color 0.5s ease; // Smooth transition for the max-height
 
   @media (min-width: 768px) {
     display: none;

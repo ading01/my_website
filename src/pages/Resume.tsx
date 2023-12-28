@@ -40,7 +40,6 @@ const HeaderContainer = styled.div`
 
   @media (max-width: 768px) {
     align-items: flex-start; // Aligns children to the start of the container
-    top: 10vh;
   }
 `;
 

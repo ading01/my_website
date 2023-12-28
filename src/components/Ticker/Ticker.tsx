@@ -19,7 +19,7 @@ const TickerContainer = styled.div`
   overflow: hidden;
   top: 70px;
   @media (max-width: 768px) {
-    top: 400px;
+    top: 300px;
   }
 `;
 

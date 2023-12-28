@@ -15,6 +15,7 @@ const MenuIcon = styled.div`
   right: 10px;
   z-index: 100; // Above other content
   color: ${({ theme }) => theme.texts.primary};
+  transition: color 0.5s ease;
 
   @media (max-width: 768px) {
     display: block; // Only show on small screens
@@ -62,7 +63,6 @@ const DropdownMenu = styled.div<DropdownMenuProps>`
 // The component
 const MobileMenu: React.FC = () => {
   const { theme } = useTheme();
-  const iconColor = theme === "light" ? "white" : "black";
   const [isOpen, setIsOpen] = useState(false);
 
   return (

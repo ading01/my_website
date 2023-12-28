@@ -18,6 +18,9 @@ const TickerContainer = styled.div`
   transition: background-color 0.5s ease;
   overflow: hidden;
   top: 70px;
+  @media (max-width: 768px) {
+    top: 250px;
+  }
 `;
 
 // Create a styled text component with the animation
@@ -30,6 +33,9 @@ const TickerText = styled.div`
   animation: ${scrollAnimation} 30s linear infinite;
   z-index: 1;
   overflow: auto;
+  @media (max-width: 768px) {
+    font-size: 75vh;
+  }
 `;
 
 type TickerProps = {

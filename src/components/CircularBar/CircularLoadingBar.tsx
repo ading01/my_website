@@ -2,7 +2,7 @@ import * as React from "react";
 import styled, { keyframes } from "styled-components";
 
 // Calculate the circumference of the circle
-const radius = 45;
+const radius = 40;
 const circumference = 2 * Math.PI * radius;
 
 // Keyframes for the animation
@@ -46,12 +46,23 @@ const CircularProgress = styled.circle.attrs<CircularProgressProps>(
   stroke-dasharray: 0 ${circumference};
   stroke-dashoffset: 0;
   animation: ${(props) => animateProgress(props)} 2s ease-out forwards;
+
+  @media (max-width: 768px) {
+    stroke-dasharray: 0 ${radius * 2};
+  }
 `;
 
 // Styled SVG container (no changes here)
 const LoadingContainer = styled.svg`
   width: 100px;
   height: 100px;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 45vw;
+    height: 45vw;
+  }
 `;
 
 // Styled text component (no changes here)

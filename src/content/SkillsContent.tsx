@@ -3,6 +3,7 @@ import styled from "styled-components";
 import CircularLoadingBar from "../components/CircularBar/CircularLoadingBar";
 import FadeInSection from "../ui/FadeInSection";
 import SkillBar from "../components/SkillBar/SkillBar";
+import { useRef } from "react";
 
 type SkillsContainerProps = {
   title: string;
@@ -32,11 +33,13 @@ const SkillsContainer: React.FC<SkillsContainerProps> = ({
   children,
 }) => {
   type AccumulatorType = ReactElement[][];
+  const windowSize = useRef([window.innerWidth, window.innerHeight]);
+  const div = windowSize.current[0] < 768 ? 2 : 4;
 
   const groupedChildren = React.Children.toArray(
     children
   ).reduce<AccumulatorType>((acc, child, index) => {
-    const groupIndex = Math.floor(index / 4);
+    const groupIndex = Math.floor(index / div);
     if (!acc[groupIndex]) {
       acc[groupIndex] = [];
     }

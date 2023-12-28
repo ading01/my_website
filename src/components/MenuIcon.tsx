@@ -38,6 +38,7 @@ const DropdownMenu = styled.div<DropdownMenuProps>`
   max-height: ${({ isOpen }) =>
     isOpen ? "300px" : "0"}; // Adjust the max height as needed
   transition: max-height 0.3s ease-in-out; // Smooth transition for the max-height
+  transition: background-color 0.5s ease;
 
   @media (min-width: 768px) {
     display: none;

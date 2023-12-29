@@ -2,7 +2,7 @@ import React, { ReactElement } from "react";
 import styled from "styled-components";
 import CircularLoadingBar from "../components/CircularBar/CircularLoadingBar";
 import FadeInSection from "../ui/FadeInSection";
-import SkillBar from "../components/SkillBar/SkillBar";
+import { breakpoints } from "../ui/theme/base/breakpoint";
 import { useRef } from "react";
 
 type SkillsContainerProps = {
@@ -21,7 +21,10 @@ const TitleHeading = styled.h1`
 const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
@@ -92,6 +95,7 @@ function SkillsContent() {
           skill={"Express.js"}
           color={"#FFA500"}
         />
+        <CircularLoadingBar progress={90} skill={"Flask"} color={"#FFA500"} />
         {/* Add more CircularLoadingBar components as needed */}
       </SkillsContainer>
       <SkillsContainer title="Technologies">

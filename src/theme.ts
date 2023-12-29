@@ -1,11 +1,12 @@
 import { DefaultTheme } from "styled-components";
 
+//
 const lightTheme: DefaultTheme = {
   backgroundColor: "white",
   fonts: {
-    body: "Lora",
-    heading: "Lora",
-    monospace: "'Courier New', monospace",
+    body: "Manrope",
+    heading: "Manrope",
+    monospace: "Manrope",
   },
   texts: {
     primary: "#000000",
@@ -28,9 +29,9 @@ const lightTheme: DefaultTheme = {
 const darkTheme: DefaultTheme = {
   backgroundColor: "black",
   fonts: {
-    body: "Lora",
-    heading: "Lora",
-    monospace: "'Courier New', monospace",
+    body: "Manrope",
+    heading: "Manrope",
+    monospace: "Manrope",
   },
   texts: {
     primary: "white",

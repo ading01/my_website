@@ -1,6 +1,4 @@
-import React from "react";
 import "./ResumeCard.css";
-import styled from "styled-components";
 import FadeInSection from "../../ui/FadeInSection";
 import {
   ResumeCardContainer,

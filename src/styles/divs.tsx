@@ -1,10 +1,15 @@
 import styled from "styled-components";
+import { breakpoints } from "../ui/theme/base/breakpoint";
 
 export const ResumeCardContainer = styled.div`
   width: 50vw;
   background-color: ${({ theme }) => theme.backgroundColor};
   margin: 20px;
   transition: background-color 0.5s ease;
+
+  @media (max-width: ${breakpoints.tablet}px) {
+    width: 70%;
+  }
 
   @media (max-width: 768px) {
     width: 100%;
@@ -24,6 +29,8 @@ export const LeftColumn = styled.div`
 `;
 
 export const RightColumn = styled.div`
+  align-items: center;
+  justify-content: center;
   flex: 75%;
   padding: 10px;
 `;

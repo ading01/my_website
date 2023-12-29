@@ -21,7 +21,7 @@ const HomeContainer = styled.div`
 
 const TitleHeading = styled(Heading)`
   font-size: 3rem;
-  font-family: ${({ theme }) => theme.fonts.heading};
+  font-family: "${({ theme }) => theme.fonts.heading}";
   color: ${({ theme }) => theme.texts.primary};
   margin: 0;
   transition: color 0.5s ease;

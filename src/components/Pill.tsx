@@ -10,7 +10,7 @@ interface PillProps {
 const PillContainer = styled.span<{ borderColor: string; textColor: string }>`
   display: inline-block;
   padding: 0.5em 1em; // Adjust padding to your liking
-  font-size: 1rem; // Adjust font-size to your liking
+  font-size: 0.8rem; // Adjust font-size to your liking
   background-color: transparent; // Transparent background
   color: ${({ textColor }) => textColor}; // Text color passed via props
   border: 2px solid ${({ borderColor }) => borderColor}; // Border color passed via props

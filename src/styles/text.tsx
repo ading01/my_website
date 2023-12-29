@@ -14,8 +14,9 @@ export const Heading = styled.h1`
 `;
 
 export const SubHeading = styled.h2<{ mode: "light" | "dark" }>`
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: ${({ theme }) => theme.texts.secondary};
+  font-family: ${({ theme }) => theme.fonts.heading};
   margin: 0;
   padding: 0;
   transition: color 0.5s ease;

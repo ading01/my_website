@@ -27,7 +27,7 @@ const TickerContainer = styled.div`
 const TickerText = styled.div`
   display: inline-block;
   font-size: 100vh;
-  font-family: ${({ theme }) => theme.fonts.heading};
+  font-family: "Lora";
   color: ${({ theme }) => theme.texts.secondary};
   transition: color 0.5s ease;
   animation: ${scrollAnimation} 30s linear infinite;

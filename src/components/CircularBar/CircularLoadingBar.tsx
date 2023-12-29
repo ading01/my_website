@@ -54,10 +54,15 @@ const CircularProgress = styled.circle.attrs<CircularProgressProps>(
 
 // Styled SVG container (no changes here)
 const LoadingContainer = styled.svg`
-  width: 100px;
-  height: 100px;
+  width: 9vw;
+  height: 9vw;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 1024px) {
+    width: 12vw;
+    height: 12vw;
+  }
 
   @media (max-width: 768px) {
     width: 45vw;

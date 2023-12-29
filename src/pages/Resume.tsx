@@ -20,7 +20,6 @@ interface Word {
 const SectionContainer = styled.div`
   margin-top: 5rem;
   position: relative;
-  min-height: 95vh;
   overflow: hidden;
   display: flex; // Enables flexbox
   justify-content: center; // Centers children horizontally
@@ -41,10 +40,6 @@ const HeaderContainer = styled.div`
   @media (max-width: 768px) {
     align-items: flex-start; // Aligns children to the start of the container
   }
-`;
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
 `;
 
 const HomeContentWrapper = styled.div`

@@ -30,7 +30,6 @@ export const LeftColumn = styled.div`
 
 export const RightColumn = styled.div`
   align-items: center;
-  justify-content: center;
   flex: 75%;
   padding: 10px;
 `;

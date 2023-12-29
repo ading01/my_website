@@ -10,7 +10,7 @@ const HomeContainer = styled.div`
   display: flex;
   flex-direction: row;
   /* background-color: aqua; */
-  width: 45vw;
+  width: 60vw;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -34,22 +34,33 @@ const TitleHeading = styled(Heading)`
 `;
 
 const LeftColumn = styled.div`
-  flex: 75%;
+  flex: 65%;
+  display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end; // Align items to the right
   justify-content: center;
+  padding-right: 10px; // Add padding to ensure there is space between text and the column's edge
 
   @media (max-width: 768px) {
-    flex-direction: column;
+    align-items: center; // Center items on smaller screens
     text-align: center;
+    padding-right: 0; // Remove the right padding on smaller screens
   }
 `;
 
+const IconContainer = styled.div`
+  flex-direction: row;
+`;
+
 const RightColumn = styled.div`
-  flex: 25%;
+  flex: 35%;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  text-align: flex-start;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 function HomeContent() {
@@ -58,15 +69,17 @@ function HomeContent() {
       <LeftColumn>
         <TitleHeading>Hi! My name is Allan.</TitleHeading>
         <TitleHeading>Welcome to my website</TitleHeading>
-        <a href="https://github.com/ading01">
-          <HoverIcon as="span" icon={<FaGithub />} hoverColor="#ff6347" />
-        </a>
-        <a href="https://www.linkedin.com/in/allan-ding-0b15431b9/">
-          <HoverIcon as="span" icon={<FaLinkedin />} hoverColor="#0072b1" />
-        </a>
-        <a href="../../Allan Ding Resume 12:26:23.pdf">
-          <HoverIcon as="span" icon={<FaRegFilePdf />} hoverColor="#00b144" />
-        </a>
+        <IconContainer>
+          <a href="https://github.com/ading01">
+            <HoverIcon as="span" icon={<FaGithub />} hoverColor="#ff6347" />
+          </a>
+          <a href="https://www.linkedin.com/in/allan-ding-0b15431b9/">
+            <HoverIcon as="span" icon={<FaLinkedin />} hoverColor="#0072b1" />
+          </a>
+          <a href="../../Allan Ding Resume 12:26:23.pdf">
+            <HoverIcon as="span" icon={<FaRegFilePdf />} hoverColor="#00b144" />
+          </a>
+        </IconContainer>
       </LeftColumn>
       <RightColumn>
         <CircularImage

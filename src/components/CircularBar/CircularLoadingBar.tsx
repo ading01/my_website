@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled, { keyframes } from "styled-components";
+import { useInView } from "react-intersection-observer";
 
 // Calculate the circumference of the circle
 const radius = 40;
@@ -84,11 +85,16 @@ const CircularLoadingBar: React.FC<{
   skill: string;
   color: string;
 }> = ({ progress, skill, color }) => {
-  return (
-    <LoadingContainer viewBox="0 0 100 100">
-      <GreyCircle r={radius} cx={50} cy={50} />
+  const { ref, inView } = useInView({
+    /* Optional options */
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
-      <CircularProgress progress={progress} color={color} />
+  return (
+    <LoadingContainer ref={ref} viewBox="0 0 100 100">
+      <GreyCircle r={radius} cx={50} cy={50} />
+      {inView ? <CircularProgress progress={progress} color={color} /> : null}
       {/* Use skill prop to dynamically display the skill text */}
       <CenterText x="50" y="50" labelColor="#fff">
         {skill}

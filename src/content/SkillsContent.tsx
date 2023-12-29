@@ -11,7 +11,7 @@ type SkillsContainerProps = {
 };
 
 const TitleHeading = styled.h1`
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
   transition: color 0.5s ease;
   font-family: ${({ theme }) => theme.fonts.heading};

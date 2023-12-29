@@ -1,4 +1,5 @@
 import "./ResumeCard.css";
+import styled from "styled-components";
 import FadeInSection from "../../ui/FadeInSection";
 import {
   ResumeCardContainer,
@@ -8,6 +9,16 @@ import {
 } from "../../styles/divs";
 
 import { Heading } from "../../styles/text";
+
+const ResumeCardTitle = styled(Heading)`
+  color: ${({ theme }) => theme.hover_color};
+  font-size: 1.5rem;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    font-size: 2rem;
+  }
+`;
 
 type ResumeCardProps = {
   section_name: string;
@@ -20,7 +31,7 @@ function ResumeCard({ section_name, resume_content }: ResumeCardProps) {
       <ResumeCardRow>
         <LeftColumn>
           <FadeInSection>
-            <Heading>{section_name}</Heading>
+            <ResumeCardTitle>{section_name}</ResumeCardTitle>
           </FadeInSection>
         </LeftColumn>
         <RightColumn>{resume_content}</RightColumn>

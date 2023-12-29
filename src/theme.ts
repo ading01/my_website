@@ -38,7 +38,7 @@ const darkTheme: DefaultTheme = {
     secondary: "grey",
     paragraph: "#ffffff",
   },
-  hover_color: "magenta",
+  hover_color: "orange",
   iconSize: "2rem",
   toggleButton: {
     background: "#333",

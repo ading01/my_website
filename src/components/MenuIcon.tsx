@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { RxHamburgerMenu } from "react-icons/rx";
+
 import { GiHamburger } from "react-icons/gi";
 import { useTheme } from "styled-components";
 
@@ -70,7 +72,7 @@ const MobileMenu: React.FC = () => {
   return (
     <>
       <MenuIcon onClick={() => setIsOpen(!isOpen)}>
-        <GiHamburger size={39} />
+        <RxHamburgerMenu size={39} />
       </MenuIcon>
       <DropdownMenu isOpen={isOpen}>
         {/* List your menu items here */}
@@ -84,9 +86,9 @@ const MobileMenu: React.FC = () => {
           Skills
         </a>
 
-        <a onClick={handleNavItemClick} href="#projects">
+        {/* <a onClick={handleNavItemClick} href="#projects">
           Projects
-        </a>
+        </a> */}
       </DropdownMenu>
     </>
   );

@@ -35,10 +35,18 @@ const NavBarContainer = styled.nav`
   z-index: 1000; /* Ensure navbar is above other content */
   /* Add other styles like background, height, etc., as needed */
 
+  @media (max-width: 1600px) {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-end;
+  }
+
   @media (max-width: 768px) {
     justify-content: space-between; /* Align items to the sides */
     background-color: ${({ theme }) => theme.backgroundColor};
     transition: background-color 0.5s ease;
+    align-items: center;
+    flex-direction: row;
   }
 `;
 

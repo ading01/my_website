@@ -20,7 +20,7 @@ interface Word {
 const SectionContainer = styled.div`
   margin-top: 5rem;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   display: flex; // Enables flexbox
   justify-content: center; // Centers children horizontally
   align-items: center; // Centers children vertically

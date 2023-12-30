@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { breakpoints } from "../ui/theme/base/breakpoint";
 
 export const ResumeCardContainer = styled.div`
+  padding-top: 50px;
   width: 50vw;
   background-color: ${({ theme }) => theme.backgroundColor};
   margin: 20px;
@@ -18,6 +19,7 @@ export const ResumeCardContainer = styled.div`
 
 export const ResumeCardRow = styled.div`
   display: flex;
+
   @media (max-width: 768px) {
     flex-direction: column;
   }

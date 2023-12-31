@@ -12,7 +12,6 @@ const HomeContainer = styled.div`
   /* background-color: aqua; */
   max-width: 1000px;
   margin: 0 auto;
-  align-items: flex-end; // Align items to the right
   justify-content: center;
 
   @media (max-width: 768px) {

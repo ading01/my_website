@@ -45,6 +45,22 @@ export const PTitle = styled.p<{ mode: "light" | "dark" }>`
   transition: color 0.5s ease;
 `;
 
+export const HighlightedLink = styled.a<{ color: string }>`
+  color: ${({ color }) => color};
+  padding: 0px 2px;
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+  text-decoration: none;
+  box-shadow: inset 0 -4px 0 ${({ color }) => color};
+
+  &:hover {
+    color: ${({ color }) => color};
+    text-decoration: none !important;
+    cursor: pointer;
+    box-shadow: inset 0 -55px 0 0 ${({ color }) => color};
+  }
+`;
+
 // export const MenuItem = styled.li<{ mode: "light" | "dark" }>`
 //   font-family: ${({ theme }) => theme.fonts.heading};
 //   color: ${({ theme }) => theme.texts.primary};

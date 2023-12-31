@@ -4,7 +4,7 @@ import styled from "styled-components";
 import MobileMenu from "./MenuIcon";
 
 const NavBarContainer = styled.nav`
-  position: sticky; /* Fixed position */
+  position: fixed; /* Fixed position */
   top: 0; /* Align to the top */
   left: 0; /* Align to the left to ensure full width coverage */
   display: flex; /* Use flexbox for internal alignment */

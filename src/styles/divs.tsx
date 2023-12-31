@@ -3,13 +3,14 @@ import { breakpoints } from "../ui/theme/base/breakpoint";
 
 export const ResumeCardContainer = styled.div`
   padding-top: 50px;
-  width: 800px;
+  width: 850px;
   background-color: ${({ theme }) => theme.backgroundColor};
-  margin: 0 auto;
+  margin-right: 100px;
   transition: background-color 0.5s ease;
 
   @media (max-width: 768px) {
     width: 100%;
+    margin-right: 0px;
   }
 `;
 

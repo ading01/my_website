@@ -10,7 +10,10 @@ const HomeContainer = styled.div`
   display: flex;
   flex-direction: row;
   /* background-color: aqua; */
-  width: 60vw;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: flex-end; // Align items to the right
+  justify-content: center;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -34,7 +37,7 @@ const TitleHeading = styled(Heading)`
 `;
 
 const LeftColumn = styled.div`
-  flex: 65%;
+  flex: 80%;
   display: flex;
   flex-direction: column;
   align-items: flex-end; // Align items to the right
@@ -53,7 +56,7 @@ const IconContainer = styled.div`
 `;
 
 const RightColumn = styled.div`
-  flex: 35%;
+  flex: 20%;
   align-items: center;
   justify-content: center;
   text-align: flex-start;

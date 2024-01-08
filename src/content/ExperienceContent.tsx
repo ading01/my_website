@@ -6,6 +6,18 @@ import { SplitContainer, MainRow, SubRow, ResumeDetails } from "../styles/divs";
 
 let ResumeContent = [
   {
+    company_name: "Capacity Management Intl Inc.",
+    location: "Dennis Port, MA",
+    position: "Software Engineer",
+    date: "September 2023 – Present",
+    details: [
+      "Independently engineered a MERN stack-based rental property web application, integrating Gmail APIs, PrimeReact calendar interface, and AWS S3, enhancing property visibility and streamlining customer engagement",
+      "Initiated and led a strategic marketing campaign in collaboration with property owners, leveraging a mailing list to successfully promote the new web application to previous / perspective guests, boosting property exposure",
+    ],
+    link: "https://www.capeoceanvista.com/",
+    color: "#5D8A96",
+  },
+  {
     company_name: "Amazon.com",
     location: "Seattle, WA",
     position: "Software Dev Engineering Intern",
@@ -73,9 +85,20 @@ function ExperienceContent() {
           {/* <div key={index}> */}
           <SplitContainer>
             <MainRow>
-              <HighlightedLink color={job.color} href={job.link}>
+              {job.link ? (
+                <HighlightedLink
+                  color={job.color}
+                  href={job.link}
+                  aria-disabled
+                >
+                  <Heading>{job.company_name}</Heading>
+                </HighlightedLink>
+              ) : (
                 <Heading>{job.company_name}</Heading>
-              </HighlightedLink>
+              )}
+              {/* <HighlightedLink color={job.color} href={job.link} aria-disabled>
+                <Heading>{job.company_name}</Heading>
+              </HighlightedLink> */}
               <Heading>{job.location}</Heading>
             </MainRow>
             <SubRow>

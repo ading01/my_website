@@ -78,7 +78,7 @@ function HomeContent() {
           <a href="https://www.linkedin.com/in/allan-ding-0b15431b9/">
             <HoverIcon as="span" icon={<FaLinkedin />} hoverColor="#0072b1" />
           </a>
-          <a href="../../Allan Ding Resume 12:26:23.pdf">
+          <a href="../../Allan Ding Resume.pdf">
             <HoverIcon as="span" icon={<FaRegFilePdf />} hoverColor="#00b144" />
           </a>
         </IconContainer>

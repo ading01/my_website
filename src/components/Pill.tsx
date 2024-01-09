@@ -15,7 +15,8 @@ const PillContainer = styled.span<{ borderColor: string; textColor: string }>`
   color: ${({ textColor }) => textColor}; // Text color passed via props
   border: 2px solid ${({ borderColor }) => borderColor}; // Border color passed via props
   border-radius: 50em; // High value to create pill shape
-  margin: 0.5em; // Add margin around the pill
+  margin-right: 0.2em; // Add margin around the pill
+  margin-bottom: 0.5em; // Add margin around the pill
   user-select: none; // Prevent the user from selecting the text
   text-align: center;
 `;

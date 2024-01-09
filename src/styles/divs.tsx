@@ -63,7 +63,8 @@ export const MainRow = styled.div`
 
 export const SubRow = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 1px;
 
   margin: 2px;
   padding-bottom: 10px;

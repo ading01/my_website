@@ -22,7 +22,7 @@ const activities: string[] = [
 
 function EducationContent() {
   const { theme } = useTheme();
-  const borderColor = theme === "light" ? "#5e8bed" : "#15aee1";
+  const borderColor = theme === "light" ? "#3895DE" : "#3895DE";
 
   return (
     <div className="education-content">

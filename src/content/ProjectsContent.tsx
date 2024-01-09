@@ -7,46 +7,55 @@ import HoverIcon from "../components/HoverIcon";
 import { FaYoutube } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { LiaLinkSolid } from "react-icons/lia";
+import Pill from "../components/Pill";
 
 let ProjectContent = [
   {
     projectName: "CampusClicks",
-    techUsed: "MongoDB, Express.js, React.js, Node.js, S3",
+    techUsed: ["MongoDB", "Express.js", "React.js", "Node.js", "S3"],
     details: [
       "Implemented and deployed a web application that serves as a centralized platform to connect Yale Students to student freelance services like photographers by incorporating instant-booking mythology to increase price transparency and exposure to student freelance market",
     ],
     link: "https://campus-clicks-client.onrender.com/",
     github: "https://github.com/yale-swe/f23-campusclicks",
-    color: "#5D8A96",
+    color: "#3895DE",
   },
   {
     projectName: "Qwixx",
-    techUsed: "Python, PyTorch, Pygame",
+    techUsed: ["Python", "PyTorch", "Pygame"],
     details: [
       "Trained three RL agents to play Qwixx and two Qwixx variants by altering two end-game conditions and optimizing for maximum point accumulation to quantify differences in game quality and study the feasibility of automated game testing",
     ],
     github: "https://github.com/ading01/490-senior-project",
-    color: "#b10c00",
+    color: "#3895DE",
   },
   {
     projectName: "Yost",
-    techUsed: "Flask, Django, SQLAlchemy, Python, JavaScript, HTML, CSS",
+    techUsed: [
+      "Flask",
+      "Django",
+      "SQLAlchemy",
+      "Python",
+      "JavaScript",
+      "HTML",
+      "CSS",
+    ],
     details: [
       "Trained three RL agents to play Qwixx and two Qwixx variants by altering two end-game conditions and optimizing for maximum point accumulation to quantify differences in game quality and study the feasibility of automated game testing",
     ],
     youtube: "https://youtu.be/QHkuQsM8nIE",
     github: "https://github.com/ading01/Yost",
-    color: "#b10c00",
+    color: "#3895DE",
   },
   {
     projectName: "Twitter bot",
-    techUsed: "Python, GPT-2",
+    techUsed: ["Python", "GPT-2"],
     details: [
       "Trained a natural language neural network model to determine positive or negative sentiment by scraping thousands of political Tweets with the Twitter Developer API, then generating response Tweets, based on predetermined political leanings, to a designated Twitter account",
     ],
     // link: "https://github.com/ading01/490-senior-project",
     github: "https://github.com/ading01/twitterbot",
-    color: "#b10c00",
+    color: "#3895DE",
   },
 ];
 
@@ -101,7 +110,16 @@ function ProjectsContent() {
               </div>
             </MainRow>
             <SubRow>
-              <SubHeading mode={theme}>{projects.techUsed}</SubHeading>
+              {projects.techUsed.map((tech, index) => (
+                <Pill
+                  key={index}
+                  borderColor={projects.color}
+                  textColor={projects.color}
+                >
+                  {tech}
+                </Pill>
+              ))}
+              {/* <SubHeading mode={theme}>{projects.techUsed}</SubHeading> */}
             </SubRow>
           </SplitContainer>
           {projects.details.map((detail, index) => (

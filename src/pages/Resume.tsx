@@ -8,9 +8,7 @@ import FadeInSection from "../ui/FadeInSection";
 import HomeContent from "../content/HomeContent/HomeContent";
 import styled from "styled-components";
 import { useTheme } from "../contexts/ThemeContext";
-import { MenuItem } from "../styles/text";
-import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import ProjectsContent from "../content/ProjectsContent";
 interface Word {
   id: number;
   left: string;
@@ -156,6 +154,13 @@ function Resume() {
         <ResumeCard
           section_name="Education"
           resume_content={<EducationContent />}
+        />
+      </SectionContainer>
+
+      <SectionContainer id="projects">
+        <ResumeCard
+          section_name="Projects"
+          resume_content={<ProjectsContent />}
         />
       </SectionContainer>
 

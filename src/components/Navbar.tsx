@@ -17,7 +17,7 @@ const NavBarContainer = styled.nav`
   /* Add other styles like background, height, etc., as needed */
   gap: 1rem;
 
-  @media (max-width: 1700px) {
+  @media (max-width: 1650px) {
     flex-direction: column;
     gap: 1rem;
     align-items: flex-end;
@@ -66,9 +66,9 @@ const NavItem = styled.a`
 const Navbar = () => {
   return (
     <NavBarContainer>
-      <NavItem href="#home">Home</NavItem>
       <NavItem href="#experience">Experience</NavItem>
       <NavItem href="#education">Education</NavItem>
+      <NavItem href="#projects">Projects</NavItem>
       <NavItem href="#skills">Skills</NavItem>
 
       <ThemeToggleButton />

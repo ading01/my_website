@@ -40,7 +40,7 @@ function EducationContent() {
           </SubRow>
         </SplitContainer>
         <div className="coursework-section">
-          <PTitle mode={theme}>Relevent Coursework</PTitle>
+          <PTitle mode={theme}>Relavent Coursework</PTitle>
           <div className="courses-container">
             {relevant_courses.map((course, index) => {
               return (

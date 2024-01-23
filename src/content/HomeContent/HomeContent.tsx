@@ -92,6 +92,7 @@ const CharSpan = styled.span`
   display: inline-block;
   transition: transform 0.3s ease;
   color: ${({ theme }) => theme.texts.primary};
+  transition: color 0.5s ease;
 
   &:hover {
     transform: translateY(-10px);

@@ -77,6 +77,7 @@ const CenterText = styled.text<{ labelColor?: string }>`
   font-size: 14px;
   text-anchor: middle;
   dominant-baseline: central;
+  transition: fill 0.5s ease;
 `;
 
 // TypeScript React component that takes in the progress and skill as props

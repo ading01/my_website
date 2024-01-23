@@ -96,6 +96,8 @@ function SkillsContent() {
           color={"#FFA500"}
         />
         <CircularLoadingBar progress={90} skill={"Flask"} color={"#FFA500"} />
+        <CircularLoadingBar progress={70} skill={"Spring"} color={"#FFA500"} />
+        <CircularLoadingBar progress={65} skill={"Pytorch"} color={"#FFA500"} />
         {/* Add more CircularLoadingBar components as needed */}
       </SkillsContainer>
       <SkillsContainer title="Technologies">
@@ -106,6 +108,8 @@ function SkillsContent() {
           skill={"REST API"}
           color={"#00FF00"}
         />
+        <CircularLoadingBar progress={75} skill={"Lambda"} color={"#00FF00"} />
+        <CircularLoadingBar progress={75} skill={"AWS S3"} color={"#00FF00"} />
         <CircularLoadingBar progress={50} skill={"Docker"} color={"#00FF00"} />
         {/* Add more CircularLoadingBar components as needed */}
       </SkillsContainer>

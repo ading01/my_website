@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 
 const scrollAnimation = keyframes`
   0% {
-    transform: translateX(50%);
+    transform: translateX(150%);
   }
   100% {
     transform: translateX(-100%);
@@ -17,7 +17,7 @@ const TickerContainer = styled.div`
   background-color: ${({ theme }) => theme.backgroundColor};
   transition: background-color 0.5s ease;
   overflow: hidden;
-  top: 70px;
+  bottom: -23vh;
   @media (max-width: 768px) {
     top: 300px;
   }
@@ -28,11 +28,12 @@ const TickerText = styled.div`
   display: inline-block;
   font-size: 100vh;
   font-family: "Lora";
-  color: ${({ theme }) => theme.texts.secondary};
+  color: ${({ theme }) => theme.texts.third};
   transition: color 0.5s ease;
-  animation: ${scrollAnimation} 30s linear infinite;
+  animation: ${scrollAnimation} 20s linear infinite;
   z-index: 1;
   overflow: auto;
+
   @media (max-width: 768px) {
     font-size: 60vh;
     animation: ${scrollAnimation} 10s linear infinite;

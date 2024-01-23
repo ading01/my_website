@@ -34,9 +34,11 @@ const HeaderContainer = styled.div`
   justify-content: center; // Centers children horizontally
   align-items: center; // Centers children vertically
   transition: background-color 0.5s ease;
+  top: -100px;
 
   @media (max-width: 768px) {
     align-items: flex-start; // Aligns children to the start of the container
+    top: 0px;
   }
 `;
 
@@ -45,7 +47,7 @@ const HomeContentWrapper = styled.div`
   z-index: 2; // Higher than the Ticker's z-index, to ensure content is above ticker
   display: flex;
   justify-content: center;
-  align-items: center;
+  // align-items: center;
   height: 100%;
 `;
 

@@ -2,7 +2,7 @@ import { DefaultTheme } from "styled-components";
 
 //
 const lightTheme: DefaultTheme = {
-  backgroundColor: "white",
+  backgroundColor: "#FAF9EE",
   fonts: {
     body: "Manrope",
     heading: "Manrope",
@@ -12,6 +12,7 @@ const lightTheme: DefaultTheme = {
     primary: "#000000",
     secondary: "#6b6b6b",
     paragraph: "#000000",
+    third: "#bebebe",
   },
   hover_color: "#007bff",
   iconSize: "2rem",
@@ -37,6 +38,7 @@ const darkTheme: DefaultTheme = {
     primary: "white",
     secondary: "#b8b8b8",
     paragraph: "#ffffff",
+    third: "#484848",
   },
   hover_color: "orange",
   iconSize: "2rem",

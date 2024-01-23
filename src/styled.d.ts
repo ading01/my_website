@@ -12,6 +12,7 @@ declare module "styled-components" {
       primary: string;
       secondary: string;
       paragraph: string;
+      third: string;
     };
     hover_color: string;
     // Add other theme property types here

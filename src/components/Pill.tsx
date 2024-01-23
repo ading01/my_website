@@ -17,7 +17,6 @@ const PillContainer = styled.span<{ borderColor: string; textColor: string }>`
   border-radius: 50em; // High value to create pill shape
   margin-right: 0.2em; // Add margin around the pill
   margin-bottom: 0.5em; // Add margin around the pill
-  user-select: none; // Prevent the user from selecting the text
   text-align: center;
 `;
 

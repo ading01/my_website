@@ -5,6 +5,9 @@ import CircularImage from "../../components/CircularImage";
 import { Heading, SubHeading, PText, PTitle } from "../../styles/text";
 import styled from "styled-components";
 import { FaLinkedin } from "react-icons/fa";
+import Typewriter from "../../components/TypingEffect/TypingEffect";
+import OneTimeTypewriter from "../../components/TypingEffect/OneTimeText";
+import CombinedTypewriter from "../../components/TypingEffect/Typewritter";
 
 const HomeContainer = styled.div`
   display: flex;
@@ -51,6 +54,7 @@ const LeftColumn = styled.div`
 `;
 
 const IconContainer = styled.div`
+  padding-top: 0.5rem;
   flex-direction: row;
 `;
 
@@ -65,12 +69,91 @@ const RightColumn = styled.div`
   }
 `;
 
+// const NameHeading = styled.h1`
+//   font-size: 6rem;
+//   font-family: Rampart One;
+//   padding: 0;
+//   margin: 1rem;
+//   color: ${({ theme }) => theme.texts.primary};
+// `;
+
+const NameHeading = styled.h1`
+  font-size: 8rem;
+  font-family: Marope;
+  padding: 0;
+  margin: 0;
+  color: ${({ theme }) => theme.texts.primary};
+  @media (max-width: 1024px) {
+    font-size: 6rem;
+  }
+`;
+
+const CharSpan = styled.span`
+  display: inline-block;
+  transition: transform 0.3s ease;
+  color: ${({ theme }) => theme.texts.primary};
+
+  &:hover {
+    transform: translateY(-10px);
+  }
+`;
+
+type HoverEffectHeadingProps = {
+  text: string;
+};
+
+const HoverEffectHeading: React.FC<HoverEffectHeadingProps> = ({ text }) => {
+  const chars = text
+    .split("")
+    .map((char, index) => <CharSpan key={index}>{char}</CharSpan>);
+
+  return <NameHeading>{chars}</NameHeading>;
+};
+
+const NameContainer = styled.div`
+  flex-direction: row;
+  display: flex;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+`;
+
+const TypingContainer = styled.div`
+  width: 70%;
+  font-size: 1rem;
+  font-family: ${({ theme }) => theme.fonts.heading};
+  text-align: left;
+  display: flex-start;
+  align-items: flex-start;
+`;
+
 function HomeContent() {
   return (
     <HomeContainer>
       <LeftColumn>
-        <TitleHeading>Hi! My name is Allan.</TitleHeading>
-        <TitleHeading>Welcome to my website</TitleHeading>
+        <NameContainer>
+          <HoverEffectHeading text="Allan" />
+          <HoverEffectHeading text="Ding" />
+        </NameContainer>
+        {/* <OneTimeTypewriter textToType="Hey! Welcome to my website. I do" />
+        <Typewriter></Typewriter> */}
+        {/* <TypingContainer>
+          {" "}
+          <CombinedTypewriter
+            initialText="I do "
+            alternatingWords={[
+              "Web Development",
+              "Full-Stack Development",
+              "Softare Engineering",
+              "Game Development",
+            ]}
+          />
+        </TypingContainer> */}
+
         <IconContainer>
           <a href="https://github.com/ading01">
             <HoverIcon as="span" icon={<FaGithub />} hoverColor="#ff6347" />

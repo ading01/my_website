@@ -109,16 +109,18 @@ function ProjectsContent() {
                 )}
               </div>
             </MainRow>
-            <SubRow>
-              {projects.techUsed.map((tech, index) => (
-                <Pill
-                  key={index}
-                  borderColor={projects.color}
-                  textColor={projects.color}
-                >
-                  {tech}
-                </Pill>
-              ))}
+            <SubRow flexDirection="flex-start">
+              <div>
+                {projects.techUsed.map((tech, index) => (
+                  <Pill
+                    key={index}
+                    borderColor={projects.color}
+                    textColor={projects.color}
+                  >
+                    {tech}
+                  </Pill>
+                ))}
+              </div>
               {/* <SubHeading mode={theme}>{projects.techUsed}</SubHeading> */}
             </SubRow>
           </SplitContainer>

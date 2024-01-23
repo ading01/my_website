@@ -61,9 +61,13 @@ export const MainRow = styled.div`
   }
 `;
 
-export const SubRow = styled.div`
+interface HeadingProps {
+  flexDirection?: string;
+}
+
+export const SubRow = styled.div<HeadingProps>`
   display: flex;
-  justify-content: flex-start;
+  justify-content: ${({ flexDirection }) => flexDirection || "space-between"};
   gap: 1px;
 
   margin: 2px;

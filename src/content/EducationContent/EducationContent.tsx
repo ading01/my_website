@@ -34,7 +34,7 @@ function EducationContent() {
           </MainRow>
           <SubRow>
             <SubHeading mode={theme}>
-              B.S. in Computer Science | GPA: 3.68/4.0
+              B.S. in Computer Science | GPA: 3.78/4.0
             </SubHeading>
             <SubHeading mode={theme}>Winter 2023</SubHeading>
           </SubRow>

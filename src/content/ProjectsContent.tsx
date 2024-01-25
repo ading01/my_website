@@ -41,7 +41,7 @@ let ProjectContent = [
       "CSS",
     ],
     details: [
-      "Trained three RL agents to play Qwixx and two Qwixx variants by altering two end-game conditions and optimizing for maximum point accumulation to quantify differences in game quality and study the feasibility of automated game testing",
+      "Developed a Flask, Django, and SQLAlchemy web application that allows students at Yale to list and locate lost items on campus",
     ],
     youtube: "https://youtu.be/QHkuQsM8nIE",
     github: "https://github.com/ading01/Yost",

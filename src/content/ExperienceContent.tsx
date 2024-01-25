@@ -31,7 +31,7 @@ let ResumeContent = [
     link: "https://www.amazon.com/",
   },
   {
-    company_name: "Casa Systems Inc.",
+    company_name: "Casa Systems",
     location: "Andover, MA",
     position: "Full Stack Software Developer Intern",
     date: "Summer 2022",

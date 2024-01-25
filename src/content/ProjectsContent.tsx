@@ -22,7 +22,7 @@ let ProjectContent = [
   },
   {
     projectName: "Qwixx",
-    techUsed: ["Python", "PyTorch", "Pygame"],
+    techUsed: ["Python", "PyTorch", "Pygame", "Matplotlib"],
     details: [
       "Trained three RL agents to play Qwixx and two Qwixx variants by altering two end-game conditions and optimizing for maximum point accumulation to quantify differences in game quality and study the feasibility of automated game testing",
     ],
@@ -49,7 +49,7 @@ let ProjectContent = [
   },
   {
     projectName: "Twitter bot",
-    techUsed: ["Python", "GPT-2"],
+    techUsed: ["Python", "TensorFlow", "GPT-2"],
     details: [
       "Trained a natural language neural network model to determine positive or negative sentiment by scraping thousands of political Tweets with the Twitter Developer API, then generating response Tweets, based on predetermined political leanings, to a designated Twitter account",
     ],

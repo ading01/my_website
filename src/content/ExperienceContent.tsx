@@ -3,23 +3,25 @@ import { Heading, SubHeading, PText, HighlightedLink } from "../styles/text";
 import FadeInSection from "../ui/FadeInSection";
 import styled from "styled-components";
 import { SplitContainer, MainRow, SubRow, ResumeDetails } from "../styles/divs";
+import Pill from "../components/Pill";
 
 let ResumeContent = [
   {
-    company_name: "Capacity Management Intl Inc.",
-    location: "Dennis Port, MA",
-    position: "Software Engineer",
-    date: "September 2023 – Present",
-    details: [
-      "Independently engineered a MERN stack-based rental property web application, integrating Gmail APIs, PrimeReact calendar interface, and AWS S3, enhancing property visibility and streamlining customer engagement",
-      "Initiated and led a strategic marketing campaign in collaboration with property owners, leveraging a mailing list to successfully promote the new web application to previous / perspective guests, boosting property exposure",
-    ],
-    link: "https://www.capeoceanvista.com/",
-    color: "#5D8A96",
-  },
-  {
     company_name: "Amazon.com",
     location: "Seattle, WA",
+    position: "Software Development Engineer",
+    date: "April 2024 - Present",
+    skills: ["Java", "AWS", "Spring", "React", "Redux", "CI/CD", "Dagger"],
+    details: [
+      "Driving the adoption of Amazon Business's Pay By Invoice feature by developing an event-based notification system using AWS Lambda, SQS, and SNS with AWS CDK",
+      "Secured vulnerable endpoints by impementing a resusable Spring annotation to validate incoming requests, reducing the risk of unauthorized access",
+    ],
+    color: "orange",
+    link: "https://www.amazon.com/",
+  },
+  {
+    company_name: "",
+    location: "",
     position: "Software Dev Engineering Intern",
     date: "Summer 2023",
     details: [
@@ -31,10 +33,24 @@ let ResumeContent = [
     link: "https://www.amazon.com/",
   },
   {
+    company_name: "Capacity Management Intl Inc.",
+    location: "Dennis Port, MA",
+    position: "Software Engineer",
+    date: "September 2023 – April 2024",
+    skills: ["React", "Node.js", "Express.js", "MongoDB", "AWS S3"],
+    details: [
+      "Independently engineered a MERN stack-based rental property web application, integrating Gmail APIs, PrimeReact calendar interface, and AWS S3, enhancing property visibility and streamlining customer engagement",
+      "Initiated and led a strategic marketing campaign in collaboration with property owners, leveraging a mailing list to successfully promote the new web application to previous / perspective guests, boosting property exposure",
+    ],
+    link: "https://www.capeoceanvista.com/",
+    color: "#5D8A96",
+  },
+  {
     company_name: "Casa Systems",
     location: "Andover, MA",
     position: "Full Stack Software Developer Intern",
     date: "Summer 2022",
+    skills: ["Python", "Flask", "JavaScript", "R"],
     details: [
       "Automated CMTS (Cable Modem Termination System) monitoring scripts using Python and SSHv2 API protocols",
       "Eliminated reliance on third-party services by developing a web application using Flask, JavaScript, and Python to centralize all CMTS monitoring data from 5 customer companies",
@@ -106,6 +122,13 @@ function ExperienceContent() {
               <SubHeading mode={theme}>{job.date}</SubHeading>
             </SubRow>
           </SplitContainer>
+          <ResumeDetails>
+            {job.skills?.map((skill, index) => (
+              <Pill key={index} borderColor={job.color} textColor={job.color}>
+                {skill}
+              </Pill>
+            ))}
+          </ResumeDetails>
           {job.details.map((detail, index) => (
             <ResumeDetails>
               <PText mode={theme}>{detail}</PText>

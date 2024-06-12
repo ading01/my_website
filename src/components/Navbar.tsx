@@ -13,9 +13,11 @@ const NavBarContainer = styled.nav`
   width: 100%; /* Full width of the viewport */
   padding: 10px; /* Add padding for breathing space */
   box-sizing: border-box; /* Include padding in width calculation */
-  z-index: 1000; /* Ensure navbar is above other content */
+  z-index: 1; /* Ensure navbar is above other content */
   /* Add other styles like background, height, etc., as needed */
   gap: 1rem;
+  transition: background-color 0.5s ease;
+  background-color: ${({ theme }) => theme.backgroundColor};
 
   @media (max-width: 1650px) {
     flex-direction: column;
@@ -25,10 +27,9 @@ const NavBarContainer = styled.nav`
 
   @media (max-width: 768px) {
     justify-content: space-between; /* Align items to the sides */
-    background-color: ${({ theme }) => theme.backgroundColor};
-    transition: background-color 0.5s ease;
     align-items: center;
     flex-direction: row;
+    z-index: 1000;
   }
 `;
 

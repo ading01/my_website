@@ -82,6 +82,9 @@ const MobileMenu: React.FC = () => {
         <a onClick={handleNavItemClick} href="#education">
           Education
         </a>
+        <a onClick={handleNavItemClick} href="#projects">
+          Projects
+        </a>
         <a onClick={handleNavItemClick} href="#skills">
           Skills
         </a>

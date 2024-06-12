@@ -1,6 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+  *, html {
+    scroll-behavior: smooth !important;
+  }
   body {
     background-color: ${({ theme }) => theme.backgroundColor};
     color: ${({ theme }) => theme.textColor};
@@ -8,11 +11,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
     scroll: smooth;
     scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
   }
-  *, html {
 
-    scroll-behavior: smooth !important;
-}
+
 `;
 
 export default GlobalStyle;

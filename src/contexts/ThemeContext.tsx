@@ -27,7 +27,7 @@ export const useTheme = () => {
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   // Initialize theme state with value from cookies or default to 'dark'
   const [theme, setTheme] = useState<Theme>(
-    (Cookies.get("theme") as Theme) || "dark"
+    (Cookies.get("theme") as Theme) || "light"
   );
 
   useEffect(() => {

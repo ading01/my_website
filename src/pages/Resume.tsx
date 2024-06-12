@@ -15,6 +15,13 @@ interface Word {
   top: string;
 }
 
+const ResumeContainer = styled.div`
+  background-color: ${({ theme }) => theme.backgroundColor};
+  transition: background-color 0.5s ease;
+  left: 0;
+  right: 0;
+`;
+
 const SectionContainer = styled.div`
   margin-top: 5rem;
   position: relative;
@@ -22,6 +29,7 @@ const SectionContainer = styled.div`
   display: flex; // Enables flexbox
   justify-content: center; // Centers children horizontally
   align-items: center; // Centers children vertically
+  background-color: ${({ theme }) => theme.backgroundColor};
   transition: background-color 0.5s ease;
 `;
 
@@ -117,7 +125,7 @@ function Resume() {
   };
 
   return (
-    <div id="resume" className="resume">
+    <ResumeContainer id="resume" className="resume">
       <Ticker repeatText="Welcome" />
       {/* <WelcomeText>Welcome</WelcomeText> */}
       <HeaderContainer id="home">
@@ -169,7 +177,7 @@ function Resume() {
       <SectionContainer id="skills">
         <ResumeCard section_name="Skills" resume_content={<SkillsContent />} />
       </SectionContainer>
-    </div>
+    </ResumeContainer>
   );
 }
 

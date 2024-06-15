@@ -31,7 +31,6 @@ const TickerText = styled.div`
   color: ${({ theme }) => theme.texts.third};
   transition: color 0.5s ease;
   animation: ${scrollAnimation} 20s linear infinite;
-  z-index: 1;
   overflow: auto;
 
   @media (max-width: 768px) {

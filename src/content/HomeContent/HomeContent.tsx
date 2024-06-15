@@ -16,6 +16,7 @@ const HomeContainer = styled.div`
   max-width: 1000px;
   margin: 0 auto;
   justify-content: center;
+  z-index: 100;
 
   @media (max-width: 768px) {
     flex-direction: column;

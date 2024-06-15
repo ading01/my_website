@@ -4,6 +4,7 @@ import FadeInSection from "../ui/FadeInSection";
 import styled from "styled-components";
 import { SplitContainer, MainRow, SubRow, ResumeDetails } from "../styles/divs";
 import Pill from "../components/Pill";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 let ResumeContent = [
   {
@@ -13,24 +14,22 @@ let ResumeContent = [
     date: "April 2024 - Present",
     skills: ["Java", "AWS", "Spring", "React", "Redux", "CI/CD", "Dagger"],
     details: [
-      "Driving the adoption of Amazon Business's Pay By Invoice feature by developing an event-based notification system using AWS Lambda, SQS, and SNS with AWS CDK",
+      "Driving the adoption of Amazon Business's Pay By Invoice service by developing an event-based notification system using AWS Lambda, SQS, and SNS with AWS CDK",
       "Secured vulnerable endpoints by impementing a resusable Spring annotation to validate incoming requests, reducing the risk of unauthorized access",
     ],
     color: "orange",
     link: "https://www.amazon.com/",
-  },
-  {
-    company_name: "",
-    location: "",
-    position: "Software Dev Engineering Intern",
-    date: "Summer 2023",
-    details: [
-      "Migrated Amazon Business’s “Pay By Invoice” service onto Native AWS using ECS clusters to enable CloudWatch Container Insights for enhanced application monitoring and autoscaling capabilities",
-      "Simplified 8 shared front-end components (3000+ lines of code) by incorporating React hooks and redux slices, resulting in greater reusability and streamlined debugging workflows",
-      "Reduced the risk of user and region-specific errors by implementing form input validation, updating the string translation protocol, and coding robust UI/UX bug fixes to decrease customer-reported IT tickets",
+    roles: [
+      {
+        title: "Software Development Engineering Intern",
+        date: "June 2023 - August 2023",
+        details: [
+          "Migrated Amazon Business’s “Pay By Invoice” service onto Native AWS using ECS clusters to enable CloudWatch Container Insights for enhanced application monitoring and autoscaling capabilities",
+          "Simplified 8 shared front-end components (3000+ lines of code) by incorporating React hooks and redux slices, resulting in greater reusability and streamlined debugging workflows",
+          "Reduced the risk of user and region-specific errors by implementing form input validation, updating the string translation protocol, and coding robust UI/UX bug fixes to decrease customer-reported IT tickets",
+        ],
+      },
     ],
-    color: "orange",
-    link: "https://www.amazon.com/",
   },
   {
     company_name: "Capacity Management Intl Inc.",
@@ -49,7 +48,7 @@ let ResumeContent = [
     company_name: "Casa Systems",
     location: "Andover, MA",
     position: "Full Stack Software Developer Intern",
-    date: "Summer 2022",
+    date: "June 2022 - August 2022",
     skills: ["Python", "Flask", "JavaScript", "R"],
     details: [
       "Automated CMTS (Cable Modem Termination System) monitoring scripts using Python and SSHv2 API protocols",
@@ -63,7 +62,7 @@ let ResumeContent = [
     company_name: "Lily Lab at Yale",
     location: "New Haven, CT",
     position: "Research Intern",
-    date: "Janurary-May 2022",
+    date: "Janurary - May 2022",
     details: [
       "Increased the accuracy of an NLP search engine by updating text crawler functionality to improve user experience",
       "Tested the NLP search engine by implementing a bot to search a random set of keywords to show a reduction of 'no results found' outcomes",
@@ -75,7 +74,7 @@ let ResumeContent = [
     company_name: "DreamKit",
     location: "New Haven, CT",
     position: "Web Design/Marketing Intern",
-    date: "Janurary-May 2022",
+    date: "Janurary - May 2022",
     details: [
       "Implemented interactive blogging features on DreamKit’s homepage to promote community engagement by using Squarespace’s platform",
       "Pushed to create several partnerships by calling existing non-profit organizations in New Haven to expand the reach of DreamKit’s platform",
@@ -94,6 +93,25 @@ const ContentDiv = styled.div`
 function ExperienceContent() {
   const { theme } = useTheme();
 
+  function getCompanyNameComponent(
+    company_name: string,
+    link: string,
+    color: string
+  ) {
+    if (company_name === "") {
+      return <BsThreeDotsVertical color={color} size="1.5rem" />;
+    }
+
+    if (link !== "") {
+      return (
+        <HighlightedLink color={color} href={link} aria-disabled>
+          <Heading>{company_name}</Heading>
+        </HighlightedLink>
+      );
+    }
+    return <Heading>{company_name}</Heading>;
+  }
+
   return (
     <ContentDiv>
       {ResumeContent.map((job, index) => (
@@ -101,7 +119,7 @@ function ExperienceContent() {
           {/* <div key={index}> */}
           <SplitContainer>
             <MainRow>
-              {job.link ? (
+              {/* {job.link ? (
                 <HighlightedLink
                   color={job.color}
                   href={job.link}
@@ -110,11 +128,12 @@ function ExperienceContent() {
                   <Heading>{job.company_name}</Heading>
                 </HighlightedLink>
               ) : (
-                <Heading>{job.company_name}</Heading>
+                  <Heading>{job.company_name}</Heading> 
               )}
               {/* <HighlightedLink color={job.color} href={job.link} aria-disabled>
                 <Heading>{job.company_name}</Heading>
               </HighlightedLink> */}
+              {getCompanyNameComponent(job.company_name, job.link, job.color)}
               <Heading>{job.location}</Heading>
             </MainRow>
             <SubRow>
@@ -134,7 +153,20 @@ function ExperienceContent() {
               <PText mode={theme}>{detail}</PText>
             </ResumeDetails>
           ))}
-          {/* </div> */}
+          {job.roles?.map((role, index) => (
+            <div>
+              <BsThreeDotsVertical color={job.color} size="1.5rem" />
+              <SubRow>
+                <SubHeading mode={theme}>{role.title}</SubHeading>
+                <SubHeading mode={theme}>{role.date}</SubHeading>
+              </SubRow>
+              {role.details.map((detail, index) => (
+                <ResumeDetails>
+                  <PText mode={theme}>{detail}</PText>
+                </ResumeDetails>
+              ))}
+            </div>
+          ))}
         </FadeInSection>
       ))}
     </ContentDiv>

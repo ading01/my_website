@@ -15,7 +15,7 @@ let ResumeContent = [
     skills: ["Java", "AWS", "Spring", "React", "Redux", "CI/CD", "Dagger"],
     details: [
       "Driving the adoption of Amazon Business's Pay By Invoice service by developing an event-based notification system using AWS Lambda, SQS, and SNS with AWS CDK",
-      "Secured vulnerable endpoints by impementing a resusable Spring annotation to validate incoming requests, reducing the risk of unauthorized access",
+      "Secured vulnerable endpoints by implementing a reusable Spring annotation to validate incoming requests, reducing the risk of unauthorized access",
     ],
     color: "orange",
     link: "https://www.amazon.com/",
@@ -35,7 +35,7 @@ let ResumeContent = [
     company_name: "Capacity Management Intl Inc.",
     location: "Dennis Port, MA",
     position: "Software Engineer",
-    date: "September 2023 – April 2024",
+    date: "December 2023 – April 2024",
     skills: ["React", "Node.js", "Express.js", "MongoDB", "AWS S3"],
     details: [
       "Independently engineered a MERN stack-based rental property web application, integrating Gmail APIs, PrimeReact calendar interface, and AWS S3, enhancing property visibility and streamlining customer engagement",
@@ -63,8 +63,9 @@ let ResumeContent = [
     location: "New Haven, CT",
     position: "Research Intern",
     date: "Janurary - May 2022",
+    skills: ["Python", "NLP", "Web Scraping", "BeautifulSoup"],
     details: [
-      "Increased the accuracy of an NLP search engine by updating text crawler functionality to improve user experience",
+      "Improved an NLP search engine’s accuracy by 28% by implementing a text crawler with Python/BeautifulSoup to prefill a database with key page metadata used in querying",
       "Tested the NLP search engine by implementing a bot to search a random set of keywords to show a reduction of 'no results found' outcomes",
     ],
     color: "#01B2DE",

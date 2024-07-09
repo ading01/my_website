@@ -34,7 +34,7 @@ const SectionContainer = styled.div`
 `;
 
 const HeaderContainer = styled.div`
-  margin-top: 5rem;
+  padding-top: 5rem;
   position: relative;
   min-height: 95vh;
   overflow: hidden;

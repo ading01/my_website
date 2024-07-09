@@ -168,6 +168,7 @@ function ExperienceContent() {
               ))}
             </div>
           ))}
+          <div style={{ marginBottom: "2rem" }}></div>
         </FadeInSection>
       ))}
     </ContentDiv>

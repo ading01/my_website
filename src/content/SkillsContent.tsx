@@ -23,6 +23,8 @@ const GridContainer = styled.div`
   grid-template-columns: repeat(4, 1fr);
 
   @media (max-width: 768px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
     grid-template-columns: repeat(2, 1fr);
   }
 `;
@@ -64,7 +66,7 @@ const SkillsContainer: React.FC<SkillsContainerProps> = ({
 
 function SkillsContent() {
   return (
-    <ContentDiv>
+    <ContentDiv id="contentDiv">
       <SkillsContainer title="Languages">
         <CircularLoadingBar progress={90} skill={"Python"} color={"#4f88ef"} />
         <CircularLoadingBar
@@ -96,6 +98,7 @@ function SkillsContent() {
           color={"#FFA500"}
         />
         <CircularLoadingBar progress={90} skill={"Flask"} color={"#FFA500"} />
+        <CircularLoadingBar progress={90} skill={"Dagger"} color={"#FFA500"} />
         <CircularLoadingBar progress={70} skill={"Spring"} color={"#FFA500"} />
         <CircularLoadingBar progress={65} skill={"Pytorch"} color={"#FFA500"} />
         {/* Add more CircularLoadingBar components as needed */}
@@ -110,6 +113,7 @@ function SkillsContent() {
         />
         <CircularLoadingBar progress={75} skill={"Lambda"} color={"#00FF00"} />
         <CircularLoadingBar progress={75} skill={"AWS S3"} color={"#00FF00"} />
+        <CircularLoadingBar progress={70} skill={"AWS CDK"} color={"#00FF00"} />
         <CircularLoadingBar progress={50} skill={"Docker"} color={"#00FF00"} />
         {/* Add more CircularLoadingBar components as needed */}
       </SkillsContainer>

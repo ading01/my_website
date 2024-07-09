@@ -5,7 +5,6 @@ export const ResumeCardContainer = styled.div`
   padding-top: 50px;
   width: 850px;
   background-color: ${({ theme }) => theme.backgroundColor};
-  margin-right: 100px;
   transition: background-color 0.5s ease;
   z-index: 1;
 

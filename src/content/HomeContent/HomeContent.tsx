@@ -157,13 +157,13 @@ function HomeContent() {
 
         <IconContainer>
           <a href="https://github.com/ading01">
-            <HoverIcon as="span" icon={<FaGithub />} hoverColor="#ff6347" />
+            <HoverIcon as="span" icon={<FaGithub />} hoverColor="#00b144" />
           </a>
           <a href="https://www.linkedin.com/in/allan-ding-0b15431b9/">
             <HoverIcon as="span" icon={<FaLinkedin />} hoverColor="#0072b1" />
           </a>
           <a href="../../Allan Ding Resume.pdf">
-            <HoverIcon as="span" icon={<FaRegFilePdf />} hoverColor="#00b144" />
+            <HoverIcon as="span" icon={<FaRegFilePdf />} hoverColor="#ff1919" />
           </a>
         </IconContainer>
       </LeftColumn>

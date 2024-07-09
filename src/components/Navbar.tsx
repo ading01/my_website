@@ -56,7 +56,7 @@ const NavItem = styled.a`
     width: 0; /* Start with no width */
     height: 2px; /* Height of the underline */
     background-color: ${({ theme }) => theme.hover_color}; /* Underline color */
-    transition: width 0.5s ease, left 0.5s ease; /* Smooth transition for the underline */
+    transition: width 0.3s ease, left 0.3s ease; /* Smooth transition for the underline */
   }
 
   /* Hover effect */
